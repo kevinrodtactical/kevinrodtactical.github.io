@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar Certificado — KR Tactical</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#080808;--surface:#161616;--surface2:#1e1e1e;--border:#2a2a2a;--white:#f5f5f7;--silver:#c8c8c8;--silver-dim:#888;--gold:#c9a84c}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
+.verify-wrap{width:100%;max-width:560px}
+.verify-topbar{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
+.verify-topbar img{height:48px;width:48px;border-radius:50%;border:1.5px solid rgba(201,168,76,.35);padding:3px;object-fit:contain}
+.verify-topbar-name{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--silver-dim);line-height:1.4}
+.verify-topbar-name strong{display:block;color:var(--white);font-size:.9rem}
+.verify-search{background:var(--surface);border:1px solid var(--border);padding:2rem;margin-bottom:1.5px}
+.search-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:.4rem}
+.search-sub{font-size:.85rem;color:var(--silver-dim);margin-bottom:1.5rem;font-weight:300;line-height:1.5}
+.search-row{display:flex;gap:.75rem}
+.search-input{flex:1;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Barlow',sans-serif;font-size:.9rem;padding:.75rem 1rem;border-radius:3px;outline:none;transition:border-color .2s}
+.search-input:focus{border-color:var(--gold)}
+.search-btn{background:var(--gold);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.75rem 1.5rem;border:none;border-radius:3px;cursor:pointer;transition:background .2s;white-space:nowrap}
+.search-btn:hover{background:#d4af6a}
+/* RESULT */
+.result{display:none;margin-top:1px}
+.result-valid{background:var(--surface);border:1px solid rgba(29,158,117,.4);border-top:3px solid #1D9E75}
+.result-invalid{background:var(--surface);border:1px solid rgba(224,85,85,.4);border-top:3px solid #e05555}
+.result-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1rem}
+.result-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.result-icon.valid{background:rgba(29,158,117,.15);color:#1D9E75}
+.result-icon.invalid{background:rgba(224,85,85,.15);color:#e05555}
+.result-status{font-family:'Bebas Neue',sans-serif;font-size:1.4rem}
+.result-status.valid{color:#1D9E75}
+.result-status.invalid{color:#e05555}
+.result-sub{font-size:.82rem;color:var(--silver-dim);margin-top:.15rem}
+.result-body{padding:1.5rem 2rem}
+.result-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.65rem 0;border-bottom:1px solid rgba(42,42,42,.5);gap:1rem}
+.result-row:last-child{border-bottom:none}
+.result-key{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--silver-dim);flex-shrink:0}
+.result-val{font-size:.9rem;color:var(--white);text-align:right;font-weight:300}
+.result-val.highlight{color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:.05em}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:2rem;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver-dim);text-decoration:none;transition:color .2s}
+.back-link:hover{color:var(--white)}
+.loading{text-align:center;padding:2rem;color:var(--silver-dim);font-size:.9rem;display:none}
+</style>
+</head>
+<body>
+
+<div class="verify-wrap">
+  <div class="verify-topbar">
+    <img src="logo akita.jpeg" alt="Akita Security">
+    <img src="logo kr.jpeg" alt="KR Tactical">
+    <div class="verify-topbar-name">
+      <strong>KR Tactical &mdash; Akita Security International</strong>
+      Verificaci&oacute;n de Certificados
+    </div>
+  </div>
+
+  <div class="verify-search">
+    <div class="search-title">Verificar Certificado</div>
+    <p class="search-sub">Ingresa el n&uacute;mero de certificado (ej: KRT-2025-001) para verificar su autenticidad en nuestra base de datos oficial.</p>
+    <div class="search-row">
+      <input class="search-input" type="text" id="searchInput" placeholder="KRT-2025-001" onkeydown="if(event.key==='Enter')verifyCert()">
+      <button class="search-btn" onclick="verifyCert()">Verificar</button>
+    </div>
+  </div>
+
+  <div class="loading" id="loading">Consultando base de datos...</div>
+
+  <div class="result" id="result">
+    <div class="result-valid" id="resultValid">
+      <div class="result-header">
+        <div class="result-icon valid">&#10003;</div>
+        <div>
+          <div class="result-status valid">Certificado V&aacute;lido</div>
+          <div class="result-sub">Este certificado est&aacute; registrado en la base de datos oficial de KR Tactical.</div>
+        </div>
+      </div>
+      <div class="result-body">
+        <div class="result-row"><span class="result-key">N&deg; Certificado</span><span class="result-val highlight" id="rCertId">—</span></div>
+        <div class="result-row"><span class="result-key">Titular</span><span class="result-val" id="rName">—</span></div>
+        <div class="result-row"><span class="result-key">Curso</span><span class="result-val" id="rCourse">—</span></div>
+        <div class="result-row"><span class="result-key">Modalidad</span><span class="result-val" id="rMode">—</span></div>
+        <div class="result-row"><span class="result-key">Fecha de emisi&oacute;n</span><span class="result-val" id="rDate">—</span></div>
+        <div class="result-row"><span class="result-key">Instructor</span><span class="result-val">Kevin Rodriguez</span></div>
+        <div class="result-row"><span class="result-key">Organizaci&oacute;n</span><span class="result-val">KR Tactical &mdash; Akita Security International</span></div>
+      </div>
+    </div>
+    <div class="result-invalid" id="resultInvalid" style="display:none">
+      <div class="result-header">
+        <div class="result-icon invalid">&#10007;</div>
+        <div>
+          <div class="result-status invalid">Certificado No Encontrado</div>
+          <div class="result-sub">Este c&oacute;digo no existe en nuestra base de datos. Verifica el n&uacute;mero e int&eacute;ntalo de nuevo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">&#8592; Volver a KR Tactical</a>
+</div>
+
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+import { getFirestore, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDPKQgvhnvDFA1WhxvYWMAnIL9eXGw3kZU",
+  authDomain: "krtactical-3221d.firebaseapp.com",
+  projectId: "krtactical-3221d",
+  storageBucket: "krtactical-3221d.firebasestorage.app",
+  messagingSenderId: "539733909617",
+  appId: "1:539733909617:web:f243b6aebca46336a7bbd0"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+var params = new URLSearchParams(window.location.search);
+var preId = params.get('id');
+if (preId) {
+  document.getElementById('searchInput').value = preId.toUpperCase();
+  setTimeout(verifyCert, 300);
+}
+
+window.verifyCert = async function() {
+  var certId = document.getElementById('searchInput').value.trim().toUpperCase();
+  if (!certId) return;
+
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('result').style.display = 'none';
+
+  try {
+    var q = query(collection(db, 'certificates'), where('certId', '==', certId));
+    var snap = await getDocs(q);
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
+
+    if (!snap.empty) {
+      var data = snap.docs[0].data();
+      document.getElementById('rCertId').textContent = data.certId;
+      document.getElementById('rName').textContent = data.name;
+      document.getElementById('rCourse').textContent = data.course;
+      document.getElementById('rMode').textContent = data.mode === 'online' ? 'Online' : 'Presencial';
+      document.getElementById('rDate').textContent = data.dateDisplay;
+      document.getElementById('resultValid').style.display = 'block';
+      document.getElementById('resultInvalid').style.display = 'none';
+    } else {
+      document.getElementById('resultValid').style.display = 'none';
+      document.getElementById('resultInvalid').style.display = 'block';
+    }
+  } catch(e) {
+    document.getElementById('loading').style.display = 'none';
+    alert('Error al consultar: ' + e.message);
+  }
+};
+</script>
+</body>
+</html>

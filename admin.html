@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KR Tactical — Panel de Certificados</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#080808;--surface:#161616;--surface2:#1e1e1e;--border:#2a2a2a;--white:#f5f5f7;--silver:#c8c8c8;--silver-dim:#888;--gold:#c9a84c}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);min-height:100vh}
+/* LOGIN */
+.login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:2rem}
+.login-box{background:var(--surface);border:1px solid var(--border);padding:2.5rem;width:100%;max-width:380px}
+.login-logo{text-align:center;margin-bottom:2rem}
+.login-logo img{height:56px;width:56px;border-radius:50%;border:1.5px solid rgba(201,168,76,.4);padding:4px;object-fit:contain}
+.login-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white);text-align:center;margin-top:.5rem}
+.login-sub{font-size:.82rem;color:var(--silver-dim);text-align:center;margin-top:.25rem;margin-bottom:2rem}
+.form-label{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);display:block;margin-bottom:.35rem}
+.form-input{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Barlow',sans-serif;font-size:.9rem;padding:.75rem 1rem;border-radius:3px;outline:none;transition:border-color .2s;margin-bottom:1rem}
+.form-input:focus{border-color:var(--gold)}
+.btn-gold{width:100%;padding:.85rem;background:var(--gold);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:3px;cursor:pointer;transition:background .2s}
+.btn-gold:hover{background:#d4af6a}
+.login-error{font-size:.82rem;color:#e05555;text-align:center;margin-top:.75rem;display:none}
+/* ADMIN */
+.admin-wrap{display:none;min-height:100vh}
+.admin-topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.admin-topbar-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white)}
+.admin-topbar-right{display:flex;align-items:center;gap:1rem}
+.btn-sm{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .9rem;border-radius:3px;cursor:pointer;transition:all .2s;border:1px solid var(--border);background:transparent;color:var(--silver-dim)}
+.btn-sm:hover{border-color:var(--silver-dim);color:var(--white)}
+.admin-body{max-width:1100px;margin:0 auto;padding:2rem}
+.admin-grid{display:grid;grid-template-columns:380px 1fr;gap:2rem;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--border);padding:2rem}
+.panel-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--white);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.cert-id-display{background:var(--black);border:1px solid var(--gold);padding:1rem;text-align:center;margin-bottom:1.5rem}
+.cert-id-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:.3rem}
+.cert-id-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--gold);line-height:1}
+.form-select{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Barlow',sans-serif;font-size:.9rem;padding:.75rem 1rem;border-radius:3px;outline:none;margin-bottom:1rem;-webkit-appearance:none}
+.form-select:focus{border-color:var(--gold)}
+.form-select option{background:var(--surface)}
+.success-msg{background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.4);color:#1D9E75;font-size:.85rem;padding:.75rem 1rem;border-radius:3px;margin-top:1rem;display:none;line-height:1.5}
+/* RECORDS TABLE */
+.records-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.records-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--white)}
+.search-input{background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Barlow',sans-serif;font-size:.85rem;padding:.5rem .75rem;border-radius:3px;outline:none;width:220px}
+.search-input:focus{border-color:var(--gold)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);padding:.6rem 1rem;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:.75rem 1rem;border-bottom:1px solid rgba(42,42,42,.5);color:var(--silver);vertical-align:middle}
+tr:hover td{background:var(--surface2)}
+.badge{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.08em;padding:.2rem .55rem;border-radius:2px;white-space:nowrap}
+.badge-gold{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold)}
+.badge-gray{background:var(--surface2);border:1px solid var(--border);color:var(--silver-dim)}
+.action-link{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--silver-dim);text-decoration:none;border-bottom:1px solid transparent;transition:all .2s;cursor:pointer;background:none;border-bottom:1px solid var(--border);padding:.15rem .35rem}
+.action-link:hover{color:var(--gold);border-color:var(--gold)}
+.empty-state{text-align:center;padding:3rem 1rem;color:var(--silver-dim);font-size:.9rem}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:2rem}
+.stat-card{background:var(--surface);padding:1.25rem;text-align:center}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--white);line-height:1}
+.stat-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);margin-top:.25rem}
+@media(max-width:900px){.admin-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.admin-body{padding:1rem}.stats-row{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-wrap" id="loginWrap">
+  <div class="login-box">
+    <div class="login-logo">
+      <img src="logo kr.jpeg" alt="KR Tactical">
+      <div class="login-title">Panel Admin</div>
+      <div class="login-sub">KR Tactical &mdash; Certificados</div>
+    </div>
+    <label class="form-label">Contrase&ntilde;a de administrador</label>
+    <input class="form-input" type="password" id="adminPass" placeholder="Ingresa tu clave" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="btn-gold" onclick="doLogin()">Ingresar</button>
+    <div class="login-error" id="loginError">Clave incorrecta. Int&eacute;ntalo de nuevo.</div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-wrap" id="adminWrap">
+  <div class="admin-topbar">
+    <div class="admin-topbar-title">KR Tactical &mdash; Certificados</div>
+    <div class="admin-topbar-right">
+      <span id="statTotal" style="font-family:'Barlow Condensed',sans-serif;font-size:.82rem;color:var(--silver-dim)">Cargando...</span>
+      <button class="btn-sm" onclick="doLogout()">Cerrar sesi&oacute;n</button>
+    </div>
+  </div>
+  <div class="admin-body">
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num" id="s1">—</div><div class="stat-label">Total certificados</div></div>
+      <div class="stat-card"><div class="stat-num" id="s2">—</div><div class="stat-label">Este a&ntilde;o</div></div>
+      <div class="stat-card"><div class="stat-num" id="s3">—</div><div class="stat-label">Pr&oacute;ximo N&deg;</div></div>
+    </div>
+    <div class="admin-grid">
+      <!-- FORM -->
+      <div class="panel">
+        <div class="panel-title">Nuevo Certificado</div>
+        <div class="cert-id-display">
+          <div class="cert-id-label">N&uacute;mero autom&aacute;tico</div>
+          <div class="cert-id-num" id="nextIdDisplay">KRT-2025-001</div>
+        </div>
+        <label class="form-label">Nombre completo del participante</label>
+        <input class="form-input" type="text" id="fName" placeholder="Ej: Juan Carlos P&eacute;rez">
+        <label class="form-label">Curso completado</label>
+        <select class="form-select" id="fCourse">
+          <option>Conciencia Situacional &amp; Seguridad Personal</option>
+          <option>Introducci&oacute;n a las Armas de Fuego</option>
+          <option>Tiro T&aacute;ctico Defensivo</option>
+          <option>Tiro T&aacute;ctico Especializado</option>
+          <option>Protecci&oacute;n Cercana</option>
+          <option>Protecci&oacute;n VIP</option>
+          <option>Escolta Profesional</option>
+          <option>Leg&iacute;tima Defensa Legal</option>
+          <option>Protecci&oacute;n Personal para Civiles</option>
+          <option>Seguridad VIP y Protocolo de Escolta</option>
+          <option>Seguridad para Empresas y Negocios</option>
+          <option>Criminolog&iacute;a Aplicada a la Seguridad</option>
+        </select>
+        <label class="form-label">Ciudad</label>
+        <input class="form-input" type="text" id="fCity" placeholder="Lima" value="Lima">
+        <label class="form-label">Fecha de emisi&oacute;n</label>
+        <input class="form-input" type="date" id="fDate">
+        <label class="form-label">Modalidad</label>
+        <select class="form-select" id="fMode">
+          <option value="presencial">Presencial</option>
+          <option value="online">Online</option>
+        </select>
+        <button class="btn-gold" onclick="issueCert()" id="issueBtn">Emitir Certificado</button>
+        <div class="success-msg" id="successMsg"></div>
+      </div>
+      <!-- RECORDS -->
+      <div>
+        <div class="records-header">
+          <div class="records-title">Certificados Emitidos</div>
+          <input class="search-input" type="text" placeholder="Buscar nombre..." oninput="filterRecords(this.value)">
+        </div>
+        <div class="panel" style="padding:0;overflow:hidden">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>N&deg;</th>
+                  <th>Nombre</th>
+                  <th>Curso</th>
+                  <th>Fecha</th>
+                  <th>Tipo</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="recordsBody">
+                <tr><td colspan="6" class="empty-state">Cargando registros...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+import { getFirestore, collection, addDoc, getDocs, doc, getDoc, query, orderBy, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+const ADMIN_PASSWORD = 'KRADMIN2025';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDPKQgvhnvDFA1WhxvYWMAnIL9eXGw3kZU",
+  authDomain: "krtactical-3221d.firebaseapp.com",
+  databaseURL: "https://krtactical-3221d-default-rtdb.firebaseio.com",
+  projectId: "krtactical-3221d",
+  storageBucket: "krtactical-3221d.firebasestorage.app",
+  messagingSenderId: "539733909617",
+  appId: "1:539733909617:web:f243b6aebca46336a7bbd0"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let allRecords = [];
+let nextNum = 1;
+
+window.doLogin = function() {
+  var pass = document.getElementById('adminPass').value;
+  if (pass === ADMIN_PASSWORD) {
+    document.getElementById('loginWrap').style.display = 'none';
+    document.getElementById('adminWrap').style.display = 'block';
+    loadRecords();
+    setDefaultDate();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+  }
+};
+
+window.doLogout = function() {
+  document.getElementById('loginWrap').style.display = 'flex';
+  document.getElementById('adminWrap').style.display = 'none';
+  document.getElementById('adminPass').value = '';
+};
+
+function setDefaultDate() {
+  var d = new Date();
+  var iso = d.toISOString().split('T')[0];
+  document.getElementById('fDate').value = iso;
+}
+
+function getYear() { return new Date().getFullYear(); }
+
+async function loadRecords() {
+  try {
+    var q = query(collection(db, 'certificates'), orderBy('createdAt', 'desc'));
+    var snap = await getDocs(q);
+    allRecords = [];
+    var thisYear = 0;
+    snap.forEach(function(d) {
+      var data = d.data();
+      data.id = d.id;
+      allRecords.push(data);
+      if (data.year == getYear()) thisYear++;
+    });
+    nextNum = allRecords.length + 1;
+    renderRecords(allRecords);
+    updateStats(allRecords.length, thisYear, nextNum);
+    updateNextId(nextNum);
+  } catch(e) {
+    console.error(e);
+  }
+}
+
+function updateNextId(n) {
+  var year = getYear();
+  var padded = String(n).padStart(3, '0');
+  document.getElementById('nextIdDisplay').textContent = 'KRT-' + year + '-' + padded;
+  document.getElementById('statTotal').textContent = (n-1) + ' certificados emitidos';
+}
+
+function updateStats(total, thisYear, next) {
+  document.getElementById('s1').textContent = total;
+  document.getElementById('s2').textContent = thisYear;
+  document.getElementById('s3').textContent = 'KRT-' + getYear() + '-' + String(next).padStart(3,'0');
+}
+
+function renderRecords(records) {
+  var tbody = document.getElementById('recordsBody');
+  if (!records.length) {
+    tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No hay certificados emitidos a&uacute;n.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = records.map(function(r) {
+    return '<tr>' +
+      '<td><span class="badge badge-gold">' + r.certId + '</span></td>' +
+      '<td style="color:var(--white);font-weight:400">' + r.name + '</td>' +
+      '<td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + r.course + '</td>' +
+      '<td>' + r.dateDisplay + '</td>' +
+      '<td><span class="badge ' + (r.mode==='online'?'badge-gold':'badge-gray') + '">' + r.mode + '</span></td>' +
+      '<td style="white-space:nowrap">' +
+        '<button class="action-link" onclick="window.viewCert('' + r.certId + '')">Ver</button> ' +
+        '<button class="action-link" onclick="window.openCertPage('' + r.certId + '','' + encodeURIComponent(r.name) + '','' + encodeURIComponent(r.course) + '')">Imprimir</button>' +
+      '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+window.filterRecords = function(q) {
+  var filtered = allRecords.filter(function(r) {
+    return r.name.toLowerCase().includes(q.toLowerCase()) || r.course.toLowerCase().includes(q.toLowerCase());
+  });
+  renderRecords(filtered);
+};
+
+window.viewCert = function(certId) {
+  window.open('verificar.html?id=' + certId, '_blank');
+};
+
+window.openCertPage = function(certId, name, course) {
+  window.open('certificado.html?id=' + certId + '&name=' + name + '&course=' + course, '_blank');
+};
+
+window.issueCert = async function() {
+  var name = document.getElementById('fName').value.trim();
+  var course = document.getElementById('fCourse').value;
+  var city = document.getElementById('fCity').value.trim() || 'Lima';
+  var dateVal = document.getElementById('fDate').value;
+  var mode = document.getElementById('fMode').value;
+
+  if (!name || !dateVal) {
+    alert('Por favor completa el nombre y la fecha.');
+    return;
+  }
+
+  var btn = document.getElementById('issueBtn');
+  btn.textContent = 'Emitiendo...';
+  btn.disabled = true;
+
+  var year = getYear();
+  var padded = String(nextNum).padStart(3, '0');
+  var certId = 'KRT-' + year + '-' + padded;
+
+  var months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  var d = new Date(dateVal + 'T12:00:00');
+  var dateDisplay = city + ', Perú — ' + months[d.getMonth()] + ' ' + d.getFullYear();
+
+  try {
+    await addDoc(collection(db, 'certificates'), {
+      certId: certId,
+      name: name,
+      course: course,
+      city: city,
+      dateVal: dateVal,
+      dateDisplay: dateDisplay,
+      mode: mode,
+      year: year,
+      num: nextNum,
+      instructor: 'Kevin Rodriguez',
+      organization: 'KR Tactical — Akita Security International',
+      createdAt: serverTimestamp()
+    });
+
+    var msg = document.getElementById('successMsg');
+    msg.innerHTML = '✓ Certificado <strong>' + certId + '</strong> emitido para <strong>' + name + '</strong>.<br><small>Comparte el enlace: verificar.html?id=' + certId + '</small>';
+    msg.style.display = 'block';
+
+    document.getElementById('fName').value = '';
+    await loadRecords();
+
+  } catch(e) {
+    alert('Error al emitir: ' + e.message);
+  }
+
+  btn.textContent = 'Emitir Certificado';
+  btn.disabled = false;
+};
+</script>
+</body>
+</html>
