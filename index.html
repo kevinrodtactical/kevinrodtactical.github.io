@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -32,136 +33,136 @@ img{max-width:100%;display:block}
 
 /* ── TOPBAR ── */
 .topbar{
-  position:fixed;top:0;left:0;right:0;z-index:101;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 1.5rem;height:var(--nav-h);
-  background:rgba(8,8,8,0.95);
-  border-bottom:1px solid rgba(201,168,76,0.25);
-  backdrop-filter:blur(20px);
+position:fixed;top:0;left:0;right:0;z-index:101;
+display:flex;align-items:center;justify-content:space-between;
+padding:0 1.5rem;height:var(–nav-h);
+background:rgba(8,8,8,0.95);
+border-bottom:1px solid rgba(201,168,76,0.25);
+backdrop-filter:blur(20px);
 }
 .topbar-left{display:flex;align-items:center;gap:.9rem;min-width:0}
 .topbar-logos{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
 .topbar-logos img{height:48px;width:48px;object-fit:contain;border-radius:50%;border:1.5px solid rgba(201,168,76,0.35);background:rgba(255,255,255,0.05);padding:3px;transition:border-color .3s}
-.topbar-logos img:hover{border-color:var(--gold)}
+.topbar-logos img:hover{border-color:var(–gold)}
 .topbar-sep{width:1px;height:32px;background:rgba(201,168,76,0.2);flex-shrink:0}
-.topbar-name{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--silver-dim);line-height:1.35;white-space:nowrap}
-.topbar-name strong{display:block;color:var(--white);font-size:.8rem;letter-spacing:.08em}
+.topbar-name{font-family:‘Barlow Condensed’,sans-serif;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(–silver-dim);line-height:1.35;white-space:nowrap}
+.topbar-name strong{display:block;color:var(–white);font-size:.8rem;letter-spacing:.08em}
 .topbar-nav{display:flex;align-items:center;gap:1.5rem;flex-shrink:0}
-.topbar-nav a{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--silver-dim);text-decoration:none;transition:color .2s;white-space:nowrap}
-.topbar-nav a:hover{color:var(--white)}
+.topbar-nav a{font-family:‘Barlow Condensed’,sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(–silver-dim);text-decoration:none;transition:color .2s;white-space:nowrap}
+.topbar-nav a:hover{color:var(–white)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;background:none;border:none;flex-shrink:0}
-.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:1px;transition:.3s}
-.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(8,8,8,.98);padding:1.5rem;z-index:100;flex-direction:column;gap:0;border-bottom:1px solid var(--border)}
+.hamburger span{display:block;width:22px;height:2px;background:var(–white);border-radius:1px;transition:.3s}
+.mobile-menu{display:none;position:fixed;top:var(–nav-h);left:0;right:0;background:rgba(8,8,8,.98);padding:1.5rem;z-index:100;flex-direction:column;gap:0;border-bottom:1px solid var(–border)}
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;padding:.9rem 0;border-bottom:1px solid var(--border)}
+.mobile-menu a{font-family:‘Barlow Condensed’,sans-serif;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;color:var(–silver);text-decoration:none;padding:.9rem 0;border-bottom:1px solid var(–border)}
 .mobile-menu a:last-child{border-bottom:none}
 
 /* ── HERO ── */
 .hero{
-  position:relative;height:100vh;min-height:600px;
-  display:flex;align-items:flex-end;overflow:hidden;
+position:relative;height:100vh;min-height:600px;
+display:flex;align-items:flex-end;overflow:hidden;
 }
 .hero-bg{
-  position:absolute;inset:0;
-  background-image:url('hero.jpeg');
-  background-size:cover;background-position:center 20%;
+position:absolute;inset:0;
+background-image:url(‘hero.jpeg’);
+background-size:cover;background-position:center 20%;
 }
 .hero-yt{
-  position:absolute;inset:0;z-index:0;
-  overflow:hidden;pointer-events:none;
+position:absolute;inset:0;z-index:0;
+overflow:hidden;pointer-events:none;
 }
 .hero-yt iframe{
-  position:absolute;
-  top:50%;left:50%;
-  width:200vw;height:200vh;
-  transform:translate(-50%,-50%);
-  border:none;
+position:absolute;
+top:50%;left:50%;
+width:200vw;height:200vh;
+transform:translate(-50%,-50%);
+border:none;
 }
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,1) 0%,rgba(8,8,8,.6) 45%,rgba(8,8,8,.2) 100%);z-index:1}
 .hero-watermark{position:absolute;right:3%;bottom:6%;z-index:2;opacity:.1;width:min(240px,35vw);pointer-events:none;filter:grayscale(1) brightness(2)}
 .hero-content{position:relative;z-index:3;width:100%;max-width:1200px;margin:0 auto;padding:0 2rem 4.5rem}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(201,168,76,0.3);padding:.32rem .85rem;border-radius:2px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;animation:fadeUp .8s .2s both}
-.hero-badge::before{content:"";width:5px;height:5px;background:var(--gold);border-radius:50%}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,11vw,9rem);line-height:.92;letter-spacing:.02em;color:var(--white);animation:fadeUp .8s .3s both}
-.hero-title span{color:var(--gold)}
-.hero-sub{font-size:clamp(.88rem,2vw,1.05rem);font-weight:300;color:var(--silver);max-width:480px;margin-top:1.1rem;line-height:1.65;animation:fadeUp .8s .4s both}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(201,168,76,0.3);padding:.32rem .85rem;border-radius:2px;font-family:‘Barlow Condensed’,sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(–gold);margin-bottom:1.2rem;animation:fadeUp .8s .2s both}
+.hero-badge::before{content:””;width:5px;height:5px;background:var(–gold);border-radius:50%}
+.hero-title{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(3.5rem,11vw,9rem);line-height:.92;letter-spacing:.02em;color:var(–white);animation:fadeUp .8s .3s both}
+.hero-title span{color:var(–gold)}
+.hero-sub{font-size:clamp(.88rem,2vw,1.05rem);font-weight:300;color:var(–silver);max-width:480px;margin-top:1.1rem;line-height:1.65;animation:fadeUp .8s .4s both}
 .hero-actions{display:flex;gap:1rem;margin-top:1.75rem;flex-wrap:wrap;animation:fadeUp .8s .5s both}
 
 /* ── BUTTONS ── */
-.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border-radius:4px;text-decoration:none;transition:background .2s,transform .1s}
-.btn-primary:hover{background:var(--silver)}
+.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(–white);color:var(–black);font-family:‘Barlow Condensed’,sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border-radius:4px;text-decoration:none;transition:background .2s,transform .1s}
+.btn-primary:hover{background:var(–silver)}
 .btn-primary:active{transform:scale(.97)}
-.btn-secondary{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(255,255,255,.25);color:var(--silver);font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border-radius:4px;text-decoration:none;transition:border-color .2s,color .2s,transform .1s}
-.btn-secondary:hover{border-color:rgba(255,255,255,.5);color:var(--white)}
+.btn-secondary{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(255,255,255,.25);color:var(–silver);font-family:‘Barlow Condensed’,sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border-radius:4px;text-decoration:none;transition:border-color .2s,color .2s,transform .1s}
+.btn-secondary:hover{border-color:rgba(255,255,255,.5);color:var(–white)}
 .btn-secondary:active{transform:scale(.97)}
 
 /* ── STATS ── */
-.stats{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 2rem}
+.stats{background:var(–surface);border-top:1px solid var(–border);border-bottom:1px solid var(–border);padding:2.5rem 2rem}
 .stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .stat{text-align:center;padding:1rem}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--white);line-height:1}
-.stat-label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);margin-top:.3rem;font-family:'Barlow Condensed',sans-serif}
+.stat-num{font-family:‘Bebas Neue’,sans-serif;font-size:3rem;color:var(–white);line-height:1}
+.stat-label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(–silver-dim);margin-top:.3rem;font-family:‘Barlow Condensed’,sans-serif}
 
 /* ── SECTIONS ── */
 section{padding:6rem 2rem}
 .section-inner{max-width:1200px;margin:0 auto}
-.section-label{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);line-height:.95;color:var(--white);margin-bottom:1.5rem}
-.section-body{font-size:1rem;font-weight:300;color:var(--silver);line-height:1.7;max-width:600px}
+.section-label{font-family:‘Barlow Condensed’,sans-serif;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(–gold);margin-bottom:.6rem}
+.section-title{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(2.5rem,6vw,5rem);line-height:.95;color:var(–white);margin-bottom:1.5rem}
+.section-body{font-size:1rem;font-weight:300;color:var(–silver);line-height:1.7;max-width:600px}
 
 /* ── COURSES ── */
-.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);margin-top:4rem;border:1.5px solid var(--border)}
-.course-card{background:var(--surface);display:flex;flex-direction:column;overflow:hidden;transition:background .3s}
-.course-card:hover{background:var(--surface2)}
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(–border);margin-top:4rem;border:1.5px solid var(–border)}
+.course-card{background:var(–surface);display:flex;flex-direction:column;overflow:hidden;transition:background .3s}
+.course-card:hover{background:var(–surface2)}
 .course-img-wrap{overflow:hidden;aspect-ratio:4/3;width:100%}
 .course-img{width:100%;height:100%;object-fit:cover;filter:grayscale(30%);transition:filter .4s,transform .4s}
 .course-card:hover .course-img{filter:grayscale(0%);transform:scale(1.04)}
 .course-body{padding:2rem;flex:1;display:flex;flex-direction:column}
-.course-level{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.course-name{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;line-height:1;color:var(--white);margin-bottom:.9rem}
-.course-desc{font-size:.88rem;font-weight:300;color:var(--silver-dim);line-height:1.65;flex:1}
-.course-meta{display:flex;gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
-.course-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;letter-spacing:.08em;color:var(--silver-dim)}
-.course-meta-item strong{display:block;font-size:1.05rem;color:var(--white);font-weight:700}
-.course-price{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--white);margin-top:1.5rem;line-height:1}
-.course-price span{font-size:1.1rem;color:var(--silver-dim)}
-.course-cta{display:block;text-align:center;background:transparent;border:1px solid var(--border);color:var(--silver);font-family:'Barlow Condensed',sans-serif;font-size:.83rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.75rem;margin-top:1.5rem;border-radius:3px;text-decoration:none;transition:background .2s,border-color .2s,color .2s,transform .1s}
-.course-cta:hover{background:var(--white);border-color:var(--white);color:var(--black)}
+.course-level{font-family:‘Barlow Condensed’,sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(–gold);margin-bottom:.6rem}
+.course-name{font-family:‘Bebas Neue’,sans-serif;font-size:1.85rem;line-height:1;color:var(–white);margin-bottom:.9rem}
+.course-desc{font-size:.88rem;font-weight:300;color:var(–silver-dim);line-height:1.65;flex:1}
+.course-meta{display:flex;gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(–border)}
+.course-meta-item{font-family:‘Barlow Condensed’,sans-serif;font-size:.78rem;letter-spacing:.08em;color:var(–silver-dim)}
+.course-meta-item strong{display:block;font-size:1.05rem;color:var(–white);font-weight:700}
+.course-price{font-family:‘Bebas Neue’,sans-serif;font-size:2.8rem;color:var(–white);margin-top:1.5rem;line-height:1}
+.course-price span{font-size:1.1rem;color:var(–silver-dim)}
+.course-cta{display:block;text-align:center;background:transparent;border:1px solid var(–border);color:var(–silver);font-family:‘Barlow Condensed’,sans-serif;font-size:.83rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.75rem;margin-top:1.5rem;border-radius:3px;text-decoration:none;transition:background .2s,border-color .2s,color .2s,transform .1s}
+.course-cta:hover{background:var(–white);border-color:var(–white);color:var(–black)}
 .course-cta:active{transform:scale(.97)}
 
 /* ── REQUIREMENTS ── */
-.req-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2.5rem}
-.req-card{background:var(--surface2);padding:2rem}
+.req-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(–border);border:1px solid var(–border);margin-top:2.5rem}
+.req-card{background:var(–surface2);padding:2rem}
 .req-icon{font-size:1.5rem;margin-bottom:.75rem}
-.req-title{font-family:'Barlow Condensed',sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:.08em;color:var(--white);margin-bottom:.4rem}
-.req-text{font-size:.83rem;color:var(--silver-dim);font-weight:300}
+.req-title{font-family:‘Barlow Condensed’,sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:.08em;color:var(–white);margin-bottom:.4rem}
+.req-text{font-size:.83rem;color:var(–silver-dim);font-weight:300}
 
 /* ── AUDIENCE ── */
-.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
-.audience-card{background:var(--surface);padding:2rem 1.5rem;transition:background .3s}
-.audience-card:hover{background:var(--surface2)}
+.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(–border);margin-top:3rem;border:1px solid var(–border)}
+.audience-card{background:var(–surface);padding:2rem 1.5rem;transition:background .3s}
+.audience-card:hover{background:var(–surface2)}
 .audience-icon{font-size:2rem;margin-bottom:1rem}
-.audience-title{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
-.audience-text{font-size:.83rem;color:var(--silver-dim);font-weight:300;line-height:1.6}
+.audience-title{font-family:‘Barlow Condensed’,sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(–white);margin-bottom:.4rem}
+.audience-text{font-size:.83rem;color:var(–silver-dim);font-weight:300;line-height:1.6}
 
 /* ── INSTRUCTOR ── */
 .instructor-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .instructor-img-wrap{position:relative}
 .instructor-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;filter:grayscale(15%)}
-.instructor-badge-box{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--surface);border:1px solid var(--border);padding:1.25rem 1.5rem}
-.instructor-badge-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1}
-.instructor-badge-text{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim)}
-.instructor-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;color:var(--white);margin-bottom:1.25rem}
-.instructor-name span{color:var(--gold)}
-.instructor-bio{font-size:.95rem;font-weight:300;color:var(--silver);line-height:1.75;margin-bottom:1.5rem}
+.instructor-badge-box{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(–surface);border:1px solid var(–border);padding:1.25rem 1.5rem}
+.instructor-badge-num{font-family:‘Bebas Neue’,sans-serif;font-size:3rem;color:var(–gold);line-height:1}
+.instructor-badge-text{font-family:‘Barlow Condensed’,sans-serif;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(–silver-dim)}
+.instructor-name{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;color:var(–white);margin-bottom:1.25rem}
+.instructor-name span{color:var(–gold)}
+.instructor-bio{font-size:.95rem;font-weight:300;color:var(–silver);line-height:1.75;margin-bottom:1.5rem}
 .cert-categories{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
-.cert-cat{border:1px solid var(--border);overflow:hidden}
-.cert-cat-header{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(--surface2);border-left:3px solid var(--gold)}
+.cert-cat{border:1px solid var(–border);overflow:hidden}
+.cert-cat-header{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(–surface2);border-left:3px solid var(–gold)}
 .cert-cat-icon{font-size:1rem}
-.cert-cat-title{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white)}
-.cert-cat-body{padding:.85rem 1rem;background:var(--surface)}
+.cert-cat-title{font-family:‘Barlow Condensed’,sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(–white)}
+.cert-cat-body{padding:.85rem 1rem;background:var(–surface)}
 .cert-tags{display:flex;flex-wrap:wrap;gap:.35rem}
-.cert-tag{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.05em;padding:.28rem .6rem;border:1px solid var(--border);color:var(--silver-dim);border-radius:2px}
+.cert-tag{font-family:‘Barlow Condensed’,sans-serif;font-size:.7rem;letter-spacing:.05em;padding:.28rem .6rem;border:1px solid var(–border);color:var(–silver-dim);border-radius:2px}
 
 /* ── GALLERY ── */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3rem;grid-auto-rows:280px}
@@ -171,41 +172,41 @@ section{padding:6rem 2rem}
 .gallery-item.tall{grid-row:span 2}
 
 /* ── PDF ── */
-.pdf-section{background:linear-gradient(135deg,var(--surface) 0%,var(--black) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pdf-section{background:linear-gradient(135deg,var(–surface) 0%,var(–black) 100%);border-top:1px solid var(–border);border-bottom:1px solid var(–border)}
 .pdf-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.pdf-mockup{background:linear-gradient(145deg,#1a1a1a,#0d0d0d);border:1px solid var(--border);padding:2rem;box-shadow:0 40px 80px rgba(0,0,0,.6);transform:perspective(800px) rotateY(-8deg) rotateX(3deg)}
-.pdf-mockup-header{background:var(--gold);padding:.5rem 1rem;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--black);font-weight:700;margin-bottom:1.25rem}
-.pdf-mockup-title{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--white);line-height:1.1;margin-bottom:1rem}
+.pdf-mockup{background:linear-gradient(145deg,#1a1a1a,#0d0d0d);border:1px solid var(–border);padding:2rem;box-shadow:0 40px 80px rgba(0,0,0,.6);transform:perspective(800px) rotateY(-8deg) rotateX(3deg)}
+.pdf-mockup-header{background:var(–gold);padding:.5rem 1rem;font-family:‘Barlow Condensed’,sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(–black);font-weight:700;margin-bottom:1.25rem}
+.pdf-mockup-title{font-family:‘Bebas Neue’,sans-serif;font-size:1.9rem;color:var(–white);line-height:1.1;margin-bottom:1rem}
 .pdf-mockup-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;margin-top:1rem}
-.pdf-stat{background:rgba(255,255,255,.04);border:1px solid var(--border);padding:.75rem;text-align:center}
-.pdf-stat-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);line-height:1}
-.pdf-stat-label{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);margin-top:.2rem}
+.pdf-stat{background:rgba(255,255,255,.04);border:1px solid var(–border);padding:.75rem;text-align:center}
+.pdf-stat-num{font-family:‘Bebas Neue’,sans-serif;font-size:1.8rem;color:var(–gold);line-height:1}
+.pdf-stat-label{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(–silver-dim);margin-top:.2rem}
 .pdf-features{display:flex;flex-direction:column;gap:.6rem;margin:1.5rem 0 2rem}
-.pdf-feature{display:flex;align-items:center;gap:.75rem;font-size:.88rem;color:var(--silver);font-weight:300}
-.pdf-feature::before{content:"\2192";color:var(--gold);font-weight:700}
-.btn-download{display:inline-flex;align-items:center;gap:.75rem;background:var(--gold);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2rem;border-radius:4px;text-decoration:none;transition:background .2s,transform .1s}
+.pdf-feature{display:flex;align-items:center;gap:.75rem;font-size:.88rem;color:var(–silver);font-weight:300}
+.pdf-feature::before{content:”\2192”;color:var(–gold);font-weight:700}
+.btn-download{display:inline-flex;align-items:center;gap:.75rem;background:var(–gold);color:var(–black);font-family:‘Barlow Condensed’,sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2rem;border-radius:4px;text-decoration:none;transition:background .2s,transform .1s}
 .btn-download:hover{background:#d4af6a}
 .btn-download:active{transform:scale(.97)}
 
 /* ── CONTACT ── */
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
 .contact-social{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
-.social-btn{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;border:1px solid var(--border);border-radius:4px;text-decoration:none;color:var(--white);transition:background .2s,border-color .2s,transform .1s;background:var(--surface)}
-.social-btn:hover{border-color:rgba(255,255,255,.25);background:var(--surface2)}
+.social-btn{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;border:1px solid var(–border);border-radius:4px;text-decoration:none;color:var(–white);transition:background .2s,border-color .2s,transform .1s;background:var(–surface)}
+.social-btn:hover{border-color:rgba(255,255,255,.25);background:var(–surface2)}
 .social-btn:active{transform:scale(.98)}
 .social-icon{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .si-wa{background:#25d366}.si-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}.si-tt{background:#010101;border:1px solid #333}
-.social-info strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.95rem;letter-spacing:.05em;text-transform:uppercase}
-.social-info span{font-size:.82rem;color:var(--silver-dim)}
-.contact-box{padding:2.5rem;background:var(--surface);border:1px solid var(--border)}
-.contact-box h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin-bottom:.4rem}
-.contact-box p{font-size:.88rem;color:var(--silver-dim);margin-bottom:1.75rem}
-.price-list{background:var(--black);border:1px solid var(--border);padding:1.4rem;margin-bottom:1.5rem}
-.price-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
-.price-row{display:flex;justify-content:space-between;align-items:center;font-size:.88rem;padding-bottom:.65rem;margin-bottom:.65rem;border-bottom:1px solid var(--border)}
+.social-info strong{display:block;font-family:‘Barlow Condensed’,sans-serif;font-size:.95rem;letter-spacing:.05em;text-transform:uppercase}
+.social-info span{font-size:.82rem;color:var(–silver-dim)}
+.contact-box{padding:2.5rem;background:var(–surface);border:1px solid var(–border)}
+.contact-box h3{font-family:‘Bebas Neue’,sans-serif;font-size:2rem;color:var(–white);margin-bottom:.4rem}
+.contact-box p{font-size:.88rem;color:var(–silver-dim);margin-bottom:1.75rem}
+.price-list{background:var(–black);border:1px solid var(–border);padding:1.4rem;margin-bottom:1.5rem}
+.price-label{font-family:‘Barlow Condensed’,sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(–gold);margin-bottom:.9rem}
+.price-row{display:flex;justify-content:space-between;align-items:center;font-size:.88rem;padding-bottom:.65rem;margin-bottom:.65rem;border-bottom:1px solid var(–border)}
 .price-row:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
-.price-row span{color:var(--silver-dim)}
-.price-row strong{color:var(--white)}
+.price-row span{color:var(–silver-dim)}
+.price-row strong{color:var(–white)}
 
 /* ── FLOAT WA ── */
 .float-wa{position:fixed;bottom:2rem;right:2rem;z-index:200;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s;animation:waPulse 3s infinite}
@@ -214,170 +215,168 @@ section{padding:6rem 2rem}
 @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,.7)}}
 
 /* ── FOOTER ── */
-footer{padding:3rem 2rem;border-top:1px solid var(--border)}
+footer{padding:3rem 2rem;border-top:1px solid var(–border)}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
 .footer-logos{display:flex;align-items:center;gap:1rem}
 .footer-logos img{height:44px;width:44px;object-fit:contain;border-radius:50%;border:1px solid rgba(201,168,76,0.3);padding:3px}
-.footer-links a{color:var(--silver-dim);text-decoration:none;font-size:.78rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-left:1rem;transition:color .2s}
-.footer-links a:hover{color:var(--white)}
+.footer-links a{color:var(–silver-dim);text-decoration:none;font-size:.78rem;font-family:‘Barlow Condensed’,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-left:1rem;transition:color .2s}
+.footer-links a:hover{color:var(–white)}
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s,transform .65s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-
 /* ── TESTIMONIALS ── */
-.testimonials{background:var(--surface)}
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
-.testimonial-card{background:var(--surface2);padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:background .3s}
+.testimonials{background:var(–surface)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(–border);margin-top:3rem;border:1px solid var(–border)}
+.testimonial-card{background:var(–surface2);padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:background .3s}
 .testimonial-card:hover{background:#222}
 .testimonial-stars{display:flex;gap:.2rem}
-.testimonial-star{color:var(--gold);font-size:1rem}
-.testimonial-text{font-size:.92rem;font-weight:300;color:var(--silver);line-height:1.7;font-style:italic;flex:1}
-.testimonial-text::before{content:'\201C';color:var(--gold);font-size:2rem;font-family:'Bebas Neue',sans-serif;line-height:.5;display:block;margin-bottom:.5rem}
-.testimonial-author{border-top:1px solid var(--border);padding-top:1rem}
-.testimonial-name{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white)}
-.testimonial-course{font-size:.78rem;color:var(--gold);font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem}
+.testimonial-star{color:var(–gold);font-size:1rem}
+.testimonial-text{font-size:.92rem;font-weight:300;color:var(–silver);line-height:1.7;font-style:italic;flex:1}
+.testimonial-text::before{content:’\201C’;color:var(–gold);font-size:2rem;font-family:‘Bebas Neue’,sans-serif;line-height:.5;display:block;margin-bottom:.5rem}
+.testimonial-author{border-top:1px solid var(–border);padding-top:1rem}
+.testimonial-name{font-family:‘Barlow Condensed’,sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(–white)}
+.testimonial-course{font-size:.78rem;color:var(–gold);font-family:‘Barlow Condensed’,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem}
 
 /* ── FAQ ── */
-.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
-.faq-item{background:var(--surface);overflow:hidden}
+.faq-list{display:flex;flex-direction:column;gap:1px;background:var(–border);margin-top:3rem;border:1px solid var(–border)}
+.faq-item{background:var(–surface);overflow:hidden}
 .faq-question{
-  width:100%;display:flex;align-items:center;justify-content:space-between;
-  padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;
-  text-align:left;transition:background .2s;gap:1rem;
+width:100%;display:flex;align-items:center;justify-content:space-between;
+padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;
+text-align:left;transition:background .2s;gap:1rem;
 }
-.faq-question:hover{background:var(--surface2)}
-.faq-question-text{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:600;letter-spacing:.05em;color:var(--white)}
-.faq-icon{width:20px;height:20px;flex-shrink:0;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s;color:var(--silver-dim);font-size:.75rem}
-.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);border-color:var(--gold);color:var(--black)}
+.faq-question:hover{background:var(–surface2)}
+.faq-question-text{font-family:‘Barlow Condensed’,sans-serif;font-size:1rem;font-weight:600;letter-spacing:.05em;color:var(–white)}
+.faq-icon{width:20px;height:20px;flex-shrink:0;border:1px solid var(–border);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s;color:var(–silver-dim);font-size:.75rem}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(–gold);border-color:var(–gold);color:var(–black)}
 .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-answer-inner{padding:0 1.5rem 1.25rem;font-size:.9rem;font-weight:300;color:var(--silver);line-height:1.7;border-top:1px solid var(--border)}
+.faq-answer-inner{padding:0 1.5rem 1.25rem;font-size:.9rem;font-weight:300;color:var(–silver);line-height:1.7;border-top:1px solid var(–border)}
 .faq-item.open .faq-answer{max-height:300px}
 
 /* ── INSCRIPTION FORM ── */
-.form-section{background:var(--black)}
+.form-section{background:var(–black)}
 .form-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.form-box{background:var(--surface);border:1px solid var(--border);padding:2.5rem}
-.form-box h3{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--white);margin-bottom:.4rem}
-.form-box p{font-size:.88rem;color:var(--silver-dim);margin-bottom:2rem}
+.form-box{background:var(–surface);border:1px solid var(–border);padding:2.5rem}
+.form-box h3{font-family:‘Bebas Neue’,sans-serif;font-size:2.2rem;color:var(–white);margin-bottom:.4rem}
+.form-box p{font-size:.88rem;color:var(–silver-dim);margin-bottom:2rem}
 .form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
-.form-label{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim)}
+.form-label{font-family:‘Barlow Condensed’,sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(–silver-dim)}
 .form-input,.form-select{
-  background:var(--black);border:1px solid var(--border);
-  color:var(--white);font-family:'Barlow',sans-serif;font-size:.9rem;
-  padding:.75rem 1rem;border-radius:3px;width:100%;
-  transition:border-color .2s;outline:none;
-  -webkit-appearance:none;
+background:var(–black);border:1px solid var(–border);
+color:var(–white);font-family:‘Barlow’,sans-serif;font-size:.9rem;
+padding:.75rem 1rem;border-radius:3px;width:100%;
+transition:border-color .2s;outline:none;
+-webkit-appearance:none;
 }
-.form-input:focus,.form-select:focus{border-color:var(--gold)}
-.form-input::placeholder{color:var(--silver-dim)}
-.form-select option{background:var(--surface2)}
+.form-input:focus,.form-select:focus{border-color:var(–gold)}
+.form-input::placeholder{color:var(–silver-dim)}
+.form-select option{background:var(–surface2)}
 .form-submit{
-  width:100%;padding:1rem;margin-top:.5rem;
-  background:var(--gold);color:var(--black);
-  font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;
-  letter-spacing:.12em;text-transform:uppercase;
-  border:none;border-radius:4px;cursor:pointer;
-  transition:background .2s,transform .1s;
+width:100%;padding:1rem;margin-top:.5rem;
+background:var(–gold);color:var(–black);
+font-family:‘Barlow Condensed’,sans-serif;font-size:.95rem;font-weight:700;
+letter-spacing:.12em;text-transform:uppercase;
+border:none;border-radius:4px;cursor:pointer;
+transition:background .2s,transform .1s;
 }
 .form-submit:hover{background:#d4af6a}
 .form-submit:active{transform:scale(.98)}
-.form-note{font-size:.78rem;color:var(--silver-dim);margin-top:.75rem;text-align:center;line-height:1.5}
+.form-note{font-size:.78rem;color:var(–silver-dim);margin-top:.75rem;text-align:center;line-height:1.5}
 .form-info{display:flex;flex-direction:column;gap:1.5rem}
-.form-info-card{background:var(--surface);border:1px solid var(--border);padding:1.75rem;border-left:3px solid var(--gold)}
-.form-info-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--white);margin-bottom:.5rem}
-.form-info-text{font-size:.88rem;font-weight:300;color:var(--silver);line-height:1.6}
+.form-info-card{background:var(–surface);border:1px solid var(–border);padding:1.75rem;border-left:3px solid var(–gold)}
+.form-info-title{font-family:‘Bebas Neue’,sans-serif;font-size:1.5rem;color:var(–white);margin-bottom:.5rem}
+.form-info-text{font-size:.88rem;font-weight:300;color:var(–silver);line-height:1.6}
 
 /* RESPONSIVE additions */
 @media(max-width:1024px){
-  .testimonials-grid{grid-template-columns:1fr}
-  .form-inner{grid-template-columns:1fr}
+.testimonials-grid{grid-template-columns:1fr}
+.form-inner{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  .testimonials-grid{grid-template-columns:1fr}
+.testimonials-grid{grid-template-columns:1fr}
 }
 
-
 /* ── EVENTS ── */
-.events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
-.event-card{background:var(--surface);padding:2rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;transition:background .3s}
-.event-card:hover{background:var(--surface2)}
-.event-card.featured{border-left:3px solid var(--gold)}
-.event-badge{position:absolute;top:1.25rem;right:1.25rem;background:var(--gold);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .7rem;border-radius:2px}
+.events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5px;background:var(–border);margin-top:3rem;border:1px solid var(–border)}
+.event-card{background:var(–surface);padding:2rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;transition:background .3s}
+.event-card:hover{background:var(–surface2)}
+.event-card.featured{border-left:3px solid var(–gold)}
+.event-badge{position:absolute;top:1.25rem;right:1.25rem;background:var(–gold);color:var(–black);font-family:‘Barlow Condensed’,sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .7rem;border-radius:2px}
 .event-date-block{display:flex;align-items:center;gap:1rem}
-.event-day{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);line-height:1}
-.event-month-year{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);line-height:1.4}
-.event-divider{width:1px;height:50px;background:var(--border)}
-.event-name{font-family:'Bebas Neue',sans-serif;font-size:1.75rem;color:var(--white);line-height:1}
-.event-desc{font-size:.85rem;color:var(--silver-dim);font-weight:300;line-height:1.6}
+.event-day{font-family:‘Bebas Neue’,sans-serif;font-size:3.5rem;color:var(–gold);line-height:1}
+.event-month-year{font-family:‘Barlow Condensed’,sans-serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(–silver-dim);line-height:1.4}
+.event-divider{width:1px;height:50px;background:var(–border)}
+.event-name{font-family:‘Bebas Neue’,sans-serif;font-size:1.75rem;color:var(–white);line-height:1}
+.event-desc{font-size:.85rem;color:var(–silver-dim);font-weight:300;line-height:1.6}
 .event-meta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem}
-.event-meta-tag{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver-dim);border:1px solid var(--border);padding:.25rem .65rem;border-radius:2px}
+.event-meta-tag{font-family:‘Barlow Condensed’,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(–silver-dim);border:1px solid var(–border);padding:.25rem .65rem;border-radius:2px}
 .event-slots{display:flex;align-items:center;gap:.5rem;margin-top:.25rem}
-.event-slots-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:slotPulse 2s infinite}
+.event-slots-dot{width:8px;height:8px;border-radius:50%;background:var(–gold);animation:slotPulse 2s infinite}
 @keyframes slotPulse{0%,100%{opacity:1}50%{opacity:.4}}
-.event-slots-text{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
-.event-cta{display:block;text-align:center;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:.83rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.75rem;border-radius:3px;text-decoration:none;transition:background .2s,color .2s,transform .1s;margin-top:auto}
-.event-cta:hover{background:var(--gold);color:var(--black)}
+.event-slots-text{font-family:‘Barlow Condensed’,sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(–gold)}
+.event-cta{display:block;text-align:center;background:transparent;border:1px solid var(–gold);color:var(–gold);font-family:‘Barlow Condensed’,sans-serif;font-size:.83rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.75rem;border-radius:3px;text-decoration:none;transition:background .2s,color .2s,transform .1s;margin-top:auto}
+.event-cta:hover{background:var(–gold);color:var(–black)}
 .event-cta:active{transform:scale(.97)}
-.event-card.private{border-left:3px solid var(--border)}
-.event-card.private .event-day{color:var(--silver-dim)}
-.event-card.private .event-cta{border-color:var(--border);color:var(--silver-dim)}
-.event-card.private .event-cta:hover{background:var(--white);border-color:var(--white);color:var(--black)}
+.event-card.private{border-left:3px solid var(–border)}
+.event-card.private .event-day{color:var(–silver-dim)}
+.event-card.private .event-cta{border-color:var(–border);color:var(–silver-dim)}
+.event-card.private .event-cta:hover{background:var(–white);border-color:var(–white);color:var(–black)}
 
 /* ── COUNTER ── */
-.counter-section{background:var(--black);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5rem 2rem}
+.counter-section{background:var(–black);border-top:1px solid var(–border);border-bottom:1px solid var(–border);padding:5rem 2rem}
 .counter-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
 .counter-item{padding:1.5rem 1rem}
-.counter-num{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;color:var(--white);line-height:1;display:block}
-.counter-num .counter-plus{color:var(--gold)}
-.counter-label{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-dim);margin-top:.4rem}
-.counter-sublabel{font-size:.78rem;color:var(--silver-dim);font-weight:300;margin-top:.3rem}
+.counter-num{font-family:‘Bebas Neue’,sans-serif;font-size:4.5rem;color:var(–white);line-height:1;display:block}
+.counter-num .counter-plus{color:var(–gold)}
+.counter-label{font-family:‘Barlow Condensed’,sans-serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(–silver-dim);margin-top:.4rem}
+.counter-sublabel{font-size:.78rem;color:var(–silver-dim);font-weight:300;margin-top:.3rem}
 
 /* ── ALLIANCES ── */
-.alliances{background:var(--surface)}
-.alliances-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
-.alliance-card{background:var(--surface2);padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:flex-start;gap:1.25rem;transition:background .3s}
+.alliances{background:var(–surface)}
+.alliances-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5px;background:var(–border);margin-top:3rem;border:1px solid var(–border)}
+.alliance-card{background:var(–surface2);padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:flex-start;gap:1.25rem;transition:background .3s}
 .alliance-card:hover{background:#222}
 .alliance-logo-box{width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.06);border:1.5px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
 .alliance-logo-box img{width:100%;height:100%;object-fit:contain;border-radius:50%;padding:6px}
-.alliance-logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold)}
-.alliance-role{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.alliance-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);line-height:1}
-.alliance-desc{font-size:.85rem;font-weight:300;color:var(--silver-dim);line-height:1.65;flex:1}
-.alliance-link{display:inline-flex;align-items:center;gap:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver-dim);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:.2rem;transition:color .2s,border-color .2s}
-.alliance-link:hover{color:var(--gold);border-color:var(--gold)}
+.alliance-logo-text{font-family:‘Bebas Neue’,sans-serif;font-size:1.4rem;color:var(–gold)}
+.alliance-role{font-family:‘Barlow Condensed’,sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(–gold)}
+.alliance-name{font-family:‘Bebas Neue’,sans-serif;font-size:1.6rem;color:var(–white);line-height:1}
+.alliance-desc{font-size:.85rem;font-weight:300;color:var(–silver-dim);line-height:1.65;flex:1}
+.alliance-link{display:inline-flex;align-items:center;gap:.5rem;font-family:‘Barlow Condensed’,sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(–silver-dim);text-decoration:none;border-bottom:1px solid var(–border);padding-bottom:.2rem;transition:color .2s,border-color .2s}
+.alliance-link:hover{color:var(–gold);border-color:var(–gold)}
 
 /* ── MEDIA / PRESS ── */
-.media-section{background:var(--black)}
-.media-coming{border:1px dashed var(--border);padding:4rem 2rem;text-align:center;margin-top:3rem}
+.media-section{background:var(–black)}
+.media-coming{border:1px dashed var(–border);padding:4rem 2rem;text-align:center;margin-top:3rem}
 .media-coming-icon{font-size:2.5rem;margin-bottom:1rem}
-.media-coming-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--silver-dim);margin-bottom:.5rem}
-.media-coming-text{font-size:.9rem;color:var(--silver-dim);font-weight:300;max-width:400px;margin:0 auto}
+.media-coming-title{font-family:‘Bebas Neue’,sans-serif;font-size:2rem;color:var(–silver-dim);margin-bottom:.5rem}
+.media-coming-text{font-size:.9rem;color:var(–silver-dim);font-weight:300;max-width:400px;margin:0 auto}
 
 /* ── LIGHTBOX ── */
 .lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.95);align-items:center;justify-content:center;padding:1rem}
 .lightbox.open{display:flex}
-.lightbox-img{max-width:90vw;max-height:88vh;object-fit:contain;border:1px solid var(--border)}
-.lightbox-close{position:absolute;top:1.25rem;right:1.5rem;background:none;border:none;color:var(--white);font-size:2rem;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
+.lightbox-img{max-width:90vw;max-height:88vh;object-fit:contain;border:1px solid var(–border)}
+.lightbox-close{position:absolute;top:1.25rem;right:1.5rem;background:none;border:none;color:var(–white);font-size:2rem;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
 .lightbox-close:hover{opacity:1}
-.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid var(--border);color:var(--white);font-size:1.5rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:2px;transition:background .2s}
+.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid var(–border);color:var(–white);font-size:1.5rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:2px;transition:background .2s}
 .lightbox-prev{left:1rem}.lightbox-next{right:1rem}
 .lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,.18)}
 .gallery-item{cursor:pointer}
 
 /* ── CHAT WIDGET ── */
 .chat-widget{position:fixed;bottom:6rem;right:2rem;z-index:199;display:flex;flex-direction:column;align-items:flex-end;gap:.75rem}
-.chat-bubble{background:var(--surface);border:1px solid var(--border);border-radius:12px 12px 0 12px;padding:1rem 1.25rem;max-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);animation:fadeUp .4s ease}
+.chat-bubble{background:var(–surface);border:1px solid var(–border);border-radius:12px 12px 0 12px;padding:1rem 1.25rem;max-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);animation:fadeUp .4s ease}
 .chat-bubble-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
-.chat-bubble-avatar{width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold)}
-.chat-bubble-name{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--white)}
-.chat-bubble-status{display:flex;align-items:center;gap:.3rem;font-size:.65rem;color:#25d366;font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em}
-.chat-bubble-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#25d366}
-.chat-bubble-text{font-size:.82rem;color:var(--silver);font-weight:300;line-height:1.5}
-.chat-bubble-hours{font-size:.7rem;color:var(--silver-dim);margin-top:.4rem;font-style:italic}
-.chat-bubble-btn{display:block;text-align:center;background:#25d366;color:white;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1rem;border-radius:4px;text-decoration:none;margin-top:.75rem;transition:background .2s}
+.chat-bubble-avatar{width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(–gold)}
+.chat-bubble-name{font-family:‘Barlow Condensed’,sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(–white)}
+.chat-bubble-status{display:flex;align-items:center;gap:.3rem;font-size:.65rem;color:#25d366;font-family:‘Barlow Condensed’,sans-serif;letter-spacing:.05em}
+.chat-bubble-status::before{content:””;width:6px;height:6px;border-radius:50%;background:#25d366}
+.chat-bubble-text{font-size:.82rem;color:var(–silver);font-weight:300;line-height:1.5}
+.chat-bubble-hours{font-size:.7rem;color:var(–silver-dim);margin-top:.4rem;font-style:italic}
+.chat-bubble-btn{display:block;text-align:center;background:#25d366;color:white;font-family:‘Barlow Condensed’,sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1rem;border-radius:4px;text-decoration:none;margin-top:.75rem;transition:background .2s}
 .chat-bubble-btn:hover{background:#1fb85a}
 .chat-toggle{width:56px;height:56px;border-radius:50%;background:#25d366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s}
 .chat-toggle:hover{transform:scale(1.1)}
@@ -385,292 +384,294 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
 .chat-bubble.show{display:block}
 
 @media(max-width:768px){
-  .counter-grid{grid-template-columns:repeat(2,1fr)}
-  .events-grid{grid-template-columns:1fr}
+.counter-grid{grid-template-columns:repeat(2,1fr)}
+.events-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
-  .counter-grid{grid-template-columns:repeat(2,1fr)}
-  .counter-num{font-size:3rem}
+.counter-grid{grid-template-columns:repeat(2,1fr)}
+.counter-num{font-size:3rem}
 }
 
 @media(max-width:768px){
-  .advisory-wrap{grid-template-columns:1fr !important}
-  .advisory-wrap > div:first-child{border-right:none !important;border-bottom:1px solid var(--border)}
+.advisory-wrap{grid-template-columns:1fr !important}
+.advisory-wrap > div:first-child{border-right:none !important;border-bottom:1px solid var(–border)}
 }
 
 /* ── EXIT POPUP ── */
 .popup-overlay{
-  display:none;position:fixed;inset:0;z-index:999;
-  background:rgba(0,0,0,.85);backdrop-filter:blur(6px);
-  align-items:center;justify-content:center;padding:1.5rem;
+display:none;position:fixed;inset:0;z-index:999;
+background:rgba(0,0,0,.85);backdrop-filter:blur(6px);
+align-items:center;justify-content:center;padding:1.5rem;
 }
 .popup-overlay.open{display:flex}
 .popup-box{
-  background:var(--surface);border:1px solid var(--border);
-  max-width:480px;width:100%;position:relative;
-  animation:fadeUp .35s ease;
+background:var(–surface);border:1px solid var(–border);
+max-width:480px;width:100%;position:relative;
+animation:fadeUp .35s ease;
 }
 .popup-top{
-  background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);
-  border-bottom:3px solid var(--gold);
-  padding:2rem 2rem 1.5rem;text-align:center;
+background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);
+border-bottom:3px solid var(–gold);
+padding:2rem 2rem 1.5rem;text-align:center;
 }
 .popup-close{
-  position:absolute;top:1rem;right:1rem;
-  background:none;border:none;color:var(--silver-dim);
-  font-size:1.25rem;cursor:pointer;line-height:1;
-  transition:color .2s;padding:.25rem;
+position:absolute;top:1rem;right:1rem;
+background:none;border:none;color:var(–silver-dim);
+font-size:1.25rem;cursor:pointer;line-height:1;
+transition:color .2s;padding:.25rem;
 }
-.popup-close:hover{color:var(--white)}
+.popup-close:hover{color:var(–white)}
 .popup-tag{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.75rem;
+font-family:‘Barlow Condensed’,sans-serif;
+font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;
+color:var(–gold);margin-bottom:.75rem;
 }
 .popup-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:2.4rem;color:var(--white);line-height:1;margin-bottom:.5rem;
+font-family:‘Bebas Neue’,sans-serif;
+font-size:2.4rem;color:var(–white);line-height:1;margin-bottom:.5rem;
 }
 .popup-subtitle{
-  font-size:.88rem;font-weight:300;color:var(--silver);line-height:1.5;
+font-size:.88rem;font-weight:300;color:var(–silver);line-height:1.5;
 }
 .popup-body{padding:1.75rem 2rem}
 .popup-features{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem}
 .popup-feature{
-  display:flex;align-items:center;gap:.6rem;
-  font-size:.85rem;color:var(--silver);font-weight:300;
+display:flex;align-items:center;gap:.6rem;
+font-size:.85rem;color:var(–silver);font-weight:300;
 }
-.popup-feature::before{content:"&#10003;";color:var(--gold);font-weight:700;flex-shrink:0}
+.popup-feature::before{content:”✓”;color:var(–gold);font-weight:700;flex-shrink:0}
 .popup-btn{
-  display:flex;align-items:center;justify-content:center;gap:.6rem;
-  width:100%;background:var(--gold);color:var(--black);
-  font-family:'Barlow Condensed',sans-serif;font-size:.95rem;
-  font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  padding:1rem;border-radius:3px;text-decoration:none;
-  transition:background .2s,transform .1s;border:none;cursor:pointer;
+display:flex;align-items:center;justify-content:center;gap:.6rem;
+width:100%;background:var(–gold);color:var(–black);
+font-family:‘Barlow Condensed’,sans-serif;font-size:.95rem;
+font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+padding:1rem;border-radius:3px;text-decoration:none;
+transition:background .2s,transform .1s;border:none;cursor:pointer;
 }
 .popup-btn:hover{background:#d4af6a}
 .popup-btn:active{transform:scale(.98)}
 .popup-dismiss{
-  display:block;text-align:center;margin-top:1rem;
-  font-size:.78rem;color:var(--silver-dim);cursor:pointer;
-  transition:color .2s;background:none;border:none;width:100%;
+display:block;text-align:center;margin-top:1rem;
+font-size:.78rem;color:var(–silver-dim);cursor:pointer;
+transition:color .2s;background:none;border:none;width:100%;
 }
-.popup-dismiss:hover{color:var(--white)}
-
+.popup-dismiss:hover{color:var(–white)}
 
 /* ── CARDUMEN SPORT PARTNERSHIP ── */
-.partnership-section{background:var(--black);border-top:1px solid var(--border)}
+.partnership-section{background:var(–black);border-top:1px solid var(–border)}
 .partnership-card{
-  border:1px solid var(--border);
-  overflow:hidden;margin-top:3rem;
-  display:grid;grid-template-columns:1fr 1fr;
+border:1px solid var(–border);
+overflow:hidden;margin-top:3rem;
+display:grid;grid-template-columns:1fr 1fr;
 }
 .partnership-left{
-  padding:3rem;background:var(--surface);
-  display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
+padding:3rem;background:var(–surface);
+display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
 }
 .partnership-right{
-  padding:3rem;
-  background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#0a1628 100%);
-  border-left:1px solid var(--border);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;gap:1.5rem;
+padding:3rem;
+background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#0a1628 100%);
+border-left:1px solid var(–border);
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+text-align:center;gap:1.5rem;
 }
 .partnership-tag{
-  font-family:'Barlow Condensed',sans-serif;font-size:.68rem;
-  letter-spacing:.25em;text-transform:uppercase;color:var(--gold);
+font-family:‘Barlow Condensed’,sans-serif;font-size:.68rem;
+letter-spacing:.25em;text-transform:uppercase;color:var(–gold);
 }
 .partnership-title{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.2rem);
-  color:var(--white);line-height:.95;
+font-family:‘Bebas Neue’,sans-serif;font-size:clamp(2rem,4vw,3.2rem);
+color:var(–white);line-height:.95;
 }
-.partnership-title span{color:var(--gold)}
+.partnership-title span{color:var(–gold)}
 .partnership-desc{
-  font-size:.9rem;font-weight:300;color:var(--silver);line-height:1.7;
+font-size:.9rem;font-weight:300;color:var(–silver);line-height:1.7;
 }
 .partnership-features{display:flex;flex-direction:column;gap:.65rem}
 .partnership-feature{
-  display:flex;align-items:flex-start;gap:.65rem;
-  font-size:.85rem;color:var(--silver);font-weight:300;line-height:1.5;
+display:flex;align-items:flex-start;gap:.65rem;
+font-size:.85rem;color:var(–silver);font-weight:300;line-height:1.5;
 }
 .partnership-feature::before{
-  content:"&#10003;";color:var(--gold);font-weight:700;flex-shrink:0;margin-top:.05rem;
+content:”✓”;color:var(–gold);font-weight:700;flex-shrink:0;margin-top:.05rem;
 }
 .discount-badge{
-  background:rgba(201,168,76,0.08);border:1.5px solid var(--gold);
-  padding:1.5rem 2rem;border-radius:4px;width:100%;
+background:rgba(201,168,76,0.08);border:1.5px solid var(–gold);
+padding:1.5rem 2rem;border-radius:4px;width:100%;
 }
 .discount-pct{
-  font-family:'Bebas Neue',sans-serif;font-size:5rem;color:var(--gold);
-  line-height:1;
+font-family:‘Bebas Neue’,sans-serif;font-size:5rem;color:var(–gold);
+line-height:1;
 }
 .discount-label{
-  font-family:'Barlow Condensed',sans-serif;font-size:.8rem;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--silver);
-  margin-top:.25rem;
+font-family:‘Barlow Condensed’,sans-serif;font-size:.8rem;
+letter-spacing:.15em;text-transform:uppercase;color:var(–silver);
+margin-top:.25rem;
 }
 .discount-code-wrap{
-  background:var(--surface2);border:1px solid var(--border);
-  padding:1rem 1.5rem;border-radius:3px;width:100%;
+background:var(–surface2);border:1px solid var(–border);
+padding:1rem 1.5rem;border-radius:3px;width:100%;
 }
 .discount-code-label{
-  font-family:'Barlow Condensed',sans-serif;font-size:.65rem;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--silver-dim);
-  margin-bottom:.3rem;
+font-family:‘Barlow Condensed’,sans-serif;font-size:.65rem;
+letter-spacing:.2em;text-transform:uppercase;color:var(–silver-dim);
+margin-bottom:.3rem;
 }
 .discount-code{
-  font-family:'Bebas Neue',sans-serif;font-size:2rem;
-  color:var(--white);letter-spacing:.15em;
+font-family:‘Bebas Neue’,sans-serif;font-size:2rem;
+color:var(–white);letter-spacing:.15em;
 }
 .discount-code-note{
-  font-size:.72rem;color:var(--silver-dim);font-weight:300;
-  margin-top:.3rem;line-height:1.4;
+font-size:.72rem;color:var(–silver-dim);font-weight:300;
+margin-top:.3rem;line-height:1.4;
 }
 .partnership-btn{
-  display:flex;align-items:center;justify-content:center;gap:.6rem;
-  width:100%;background:var(--white);color:var(--black);
-  font-family:'Barlow Condensed',sans-serif;font-size:.9rem;
-  font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  padding:.9rem 1.5rem;border-radius:3px;text-decoration:none;
-  transition:background .2s,transform .1s;
+display:flex;align-items:center;justify-content:center;gap:.6rem;
+width:100%;background:var(–white);color:var(–black);
+font-family:‘Barlow Condensed’,sans-serif;font-size:.9rem;
+font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+padding:.9rem 1.5rem;border-radius:3px;text-decoration:none;
+transition:background .2s,transform .1s;
 }
-.partnership-btn:hover{background:var(--silver)}
+.partnership-btn:hover{background:var(–silver)}
 .partnership-btn:active{transform:scale(.97)}
 .partnership-logo-area{
-  font-family:'Bebas Neue',sans-serif;font-size:1.6rem;
-  color:var(--white);letter-spacing:.05em;
+font-family:‘Bebas Neue’,sans-serif;font-size:1.6rem;
+color:var(–white);letter-spacing:.05em;
 }
 .partnership-logo-sub{
-  font-family:'Barlow Condensed',sans-serif;font-size:.72rem;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--silver-dim);
-  margin-top:.2rem;
+font-family:‘Barlow Condensed’,sans-serif;font-size:.72rem;
+letter-spacing:.2em;text-transform:uppercase;color:var(–silver-dim);
+margin-top:.2rem;
 }
 @media(max-width:768px){
-  .partnership-card{grid-template-columns:1fr}
-  .partnership-right{border-left:none;border-top:1px solid var(--border)}
-  .partnership-left{padding:2rem}
-  .partnership-right{padding:2rem}
+.partnership-card{grid-template-columns:1fr}
+.partnership-right{border-left:none;border-top:1px solid var(–border)}
+.partnership-left{padding:2rem}
+.partnership-right{padding:2rem}
 }
 
-
 /* ── ONLINE COURSES ── */
-.online-section{background:var(--surface)}
+.online-section{background:var(–surface)}
 .online-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:4rem}
-.online-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);padding:.35rem .9rem;border-radius:2px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.online-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border)}
-.online-card{background:var(--surface2);display:flex;flex-direction:column;overflow:hidden;position:relative;transition:background .3s}
+.online-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);padding:.35rem .9rem;border-radius:2px;font-family:‘Barlow Condensed’,sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(–gold);margin-bottom:.75rem}
+.online-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(–border);border:1px solid var(–border)}
+.online-card{background:var(–surface2);display:flex;flex-direction:column;overflow:hidden;position:relative;transition:background .3s}
 .online-card:hover{background:#202020}
-.online-card.available{border-top:3px solid var(--gold)}
-.online-card.coming{border-top:3px solid var(--border);opacity:.75}
+.online-card.available{border-top:3px solid var(–gold)}
+.online-card.coming{border-top:3px solid var(–border);opacity:.75}
 .online-card-top{padding:1.75rem 1.75rem 0}
-.online-card-status{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem}
-.online-card.available .online-card-status{color:var(--gold)}
-.online-card.coming .online-card-status{color:var(--silver-dim)}
-.online-card-title{font-family:'Bebas Neue',sans-serif;font-size:1.65rem;color:var(--white);line-height:1;margin-bottom:.75rem}
-.online-card-desc{font-size:.83rem;font-weight:300;color:var(--silver-dim);line-height:1.6;margin-bottom:1.25rem}
+.online-card-status{font-family:‘Barlow Condensed’,sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem}
+.online-card.available .online-card-status{color:var(–gold)}
+.online-card.coming .online-card-status{color:var(–silver-dim)}
+.online-card-title{font-family:‘Bebas Neue’,sans-serif;font-size:1.65rem;color:var(–white);line-height:1;margin-bottom:.75rem}
+.online-card-desc{font-size:.83rem;font-weight:300;color:var(–silver-dim);line-height:1.6;margin-bottom:1.25rem}
 .online-card-modules{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.25rem}
-.online-card-module{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;letter-spacing:.06em;padding:.22rem .55rem;border:1px solid var(--border);color:var(--silver-dim);border-radius:2px}
-.online-card-footer{margin-top:auto;padding:1.25rem 1.75rem 1.75rem;border-top:1px solid var(--border)}
+.online-card-module{font-family:‘Barlow Condensed’,sans-serif;font-size:.65rem;letter-spacing:.06em;padding:.22rem .55rem;border:1px solid var(–border);color:var(–silver-dim);border-radius:2px}
+.online-card-footer{margin-top:auto;padding:1.25rem 1.75rem 1.75rem;border-top:1px solid var(–border)}
 .online-card-meta{display:flex;gap:1.25rem;margin-bottom:1.1rem}
-.online-card-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.06em;color:var(--silver-dim)}
-.online-card-meta-item strong{display:block;font-size:.95rem;color:var(--white);font-weight:700}
-.online-card-price{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--white);line-height:1;margin-bottom:1rem}
-.online-card-price span{font-size:1rem;color:var(--silver-dim)}
-.online-card-price small{font-size:1rem;color:var(--silver-dim);font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em}
-.online-cta{display:block;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.83rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.75rem;border-radius:3px;text-decoration:none;transition:background .2s,border-color .2s,color .2s,transform .1s}
-.online-card.available .online-cta{background:var(--gold);color:var(--black);border:1px solid var(--gold)}
+.online-card-meta-item{font-family:‘Barlow Condensed’,sans-serif;font-size:.75rem;letter-spacing:.06em;color:var(–silver-dim)}
+.online-card-meta-item strong{display:block;font-size:.95rem;color:var(–white);font-weight:700}
+.online-card-price{font-family:‘Bebas Neue’,sans-serif;font-size:2.4rem;color:var(–white);line-height:1;margin-bottom:1rem}
+.online-card-price span{font-size:1rem;color:var(–silver-dim)}
+.online-card-price small{font-size:1rem;color:var(–silver-dim);font-family:‘Barlow Condensed’,sans-serif;letter-spacing:.05em}
+.online-cta{display:block;text-align:center;font-family:‘Barlow Condensed’,sans-serif;font-size:.83rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.75rem;border-radius:3px;text-decoration:none;transition:background .2s,border-color .2s,color .2s,transform .1s}
+.online-card.available .online-cta{background:var(–gold);color:var(–black);border:1px solid var(–gold)}
 .online-card.available .online-cta:hover{background:#d4af6a}
-.online-card.coming .online-cta{background:transparent;border:1px solid var(--border);color:var(--silver-dim);cursor:default}
+.online-card.coming .online-cta{background:transparent;border:1px solid var(–border);color:var(–silver-dim);cursor:default}
 .online-cta:active{transform:scale(.97)}
-.online-includes{background:var(--surface);border:1px solid var(--border);margin-top:3rem;padding:2.5rem}
-.online-includes-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white);margin-bottom:1.5rem}
+.online-includes{background:var(–surface);border:1px solid var(–border);margin-top:3rem;padding:2.5rem}
+.online-includes-title{font-family:‘Bebas Neue’,sans-serif;font-size:1.8rem;color:var(–white);margin-bottom:1.5rem}
 .online-includes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
 .online-include-item{display:flex;align-items:flex-start;gap:.75rem}
 .online-include-icon{font-size:1.25rem;flex-shrink:0;margin-top:.1rem}
-.online-include-text strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;color:var(--white);margin-bottom:.2rem}
-.online-include-text span{font-size:.8rem;color:var(--silver-dim);font-weight:300}
+.online-include-text strong{display:block;font-family:‘Barlow Condensed’,sans-serif;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;color:var(–white);margin-bottom:.2rem}
+.online-include-text span{font-size:.8rem;color:var(–silver-dim);font-weight:300}
 
 /* ── ACCESS PAGE ── */
-.access-page{display:none;position:fixed;inset:0;z-index:500;background:var(--black);overflow-y:auto;padding:2rem}
+.access-page{display:none;position:fixed;inset:0;z-index:500;background:var(–black);overflow-y:auto;padding:2rem}
 .access-page.open{display:block}
-.access-box{max-width:420px;margin:4rem auto;background:var(--surface);border:1px solid var(--border);padding:2.5rem}
+.access-box{max-width:420px;margin:4rem auto;background:var(–surface);border:1px solid var(–border);padding:2.5rem}
 .access-box-logo{text-align:center;margin-bottom:2rem}
-.access-box-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin-bottom:.4rem}
-.access-box-sub{font-size:.85rem;color:var(--silver-dim);margin-bottom:2rem;font-weight:300}
+.access-box-title{font-family:‘Bebas Neue’,sans-serif;font-size:2rem;color:var(–white);margin-bottom:.4rem}
+.access-box-sub{font-size:.85rem;color:var(–silver-dim);margin-bottom:2rem;font-weight:300}
 .access-error{font-size:.82rem;color:#e05555;margin-top:.5rem;display:none}
-.access-close{display:block;text-align:center;margin-top:1.25rem;font-size:.8rem;color:var(--silver-dim);cursor:pointer;transition:color .2s;background:none;border:none;width:100%}
-.access-close:hover{color:var(--white)}
+.access-close{display:block;text-align:center;margin-top:1.25rem;font-size:.8rem;color:var(–silver-dim);cursor:pointer;transition:color .2s;background:none;border:none;width:100%}
+.access-close:hover{color:var(–white)}
 
 /* ── COURSE VIEWER ── */
-.course-viewer{display:none;position:fixed;inset:0;z-index:600;background:var(--black);overflow-y:auto}
+.course-viewer{display:none;position:fixed;inset:0;z-index:600;background:var(–black);overflow-y:auto}
 .course-viewer.open{display:block}
-.course-topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
-.course-topbar-title{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--white)}
-.course-topbar-close{background:none;border:1px solid var(--border);color:var(--silver-dim);padding:.4rem .9rem;border-radius:3px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s}
-.course-topbar-close:hover{border-color:var(--white);color:var(--white)}
+.course-topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(–surface);border-bottom:1px solid var(–border);position:sticky;top:0;z-index:10}
+.course-topbar-title{font-family:‘Bebas Neue’,sans-serif;font-size:1.3rem;color:var(–white)}
+.course-topbar-close{background:none;border:1px solid var(–border);color:var(–silver-dim);padding:.4rem .9rem;border-radius:3px;cursor:pointer;font-family:‘Barlow Condensed’,sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s}
+.course-topbar-close:hover{border-color:var(–white);color:var(–white)}
 .course-content{max-width:900px;margin:0 auto;padding:3rem 1.5rem}
-.course-module{border:1px solid var(--border);margin-bottom:1px;overflow:hidden}
-.course-module-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:var(--surface2)}
-.course-module-num{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gold);line-height:1;width:32px;flex-shrink:0}
+.course-module{border:1px solid var(–border);margin-bottom:1px;overflow:hidden}
+.course-module-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:var(–surface2)}
+.course-module-num{font-family:‘Bebas Neue’,sans-serif;font-size:1.5rem;color:var(–gold);line-height:1;width:32px;flex-shrink:0}
 .course-module-info{flex:1}
-.course-module-title{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white)}
-.course-module-sub{font-size:.78rem;color:var(--silver-dim);margin-top:.15rem}
-.course-module-body{padding:1.5rem;background:var(--surface)}
-.course-video-placeholder{background:var(--surface2);border:1px solid var(--border);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;border-radius:2px}
+.course-module-title{font-family:‘Barlow Condensed’,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(–white)}
+.course-module-sub{font-size:.78rem;color:var(–silver-dim);margin-top:.15rem}
+.course-module-body{padding:1.5rem;background:var(–surface)}
+.course-video-placeholder{background:var(–surface2);border:1px solid var(–border);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;border-radius:2px}
 .course-video-text{text-align:center}
 .course-video-icon{font-size:2.5rem;margin-bottom:.5rem}
-.course-video-label{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver-dim)}
-.course-module-desc{font-size:.88rem;font-weight:300;color:var(--silver);line-height:1.7}
-.course-progress{background:var(--surface);border:1px solid var(--border);padding:1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:1.5rem}
-.course-progress-bar-wrap{flex:1;background:var(--border);height:4px;border-radius:2px}
-.course-progress-bar{height:4px;background:var(--gold);border-radius:2px;width:0%;transition:width .5s}
-.course-progress-text{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver-dim);white-space:nowrap}
+.course-video-label{font-family:‘Barlow Condensed’,sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(–silver-dim)}
+.course-module-desc{font-size:.88rem;font-weight:300;color:var(–silver);line-height:1.7}
+.course-progress{background:var(–surface);border:1px solid var(–border);padding:1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:1.5rem}
+.course-progress-bar-wrap{flex:1;background:var(–border);height:4px;border-radius:2px}
+.course-progress-bar{height:4px;background:var(–gold);border-radius:2px;width:0%;transition:width .5s}
+.course-progress-text{font-family:‘Barlow Condensed’,sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(–silver-dim);white-space:nowrap}
 
 @media(max-width:1024px){.online-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.online-grid{grid-template-columns:1fr}}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
-  .courses-grid{grid-template-columns:1fr}
-  .instructor-inner{grid-template-columns:1fr;gap:3rem}
-  .instructor-badge-box{right:0}
-  .pdf-inner{grid-template-columns:1fr;gap:3rem}
-  .pdf-mockup{transform:none}
-  .contact-inner{grid-template-columns:1fr}
-  .audience-grid{grid-template-columns:repeat(2,1fr)}
+.courses-grid{grid-template-columns:1fr}
+.instructor-inner{grid-template-columns:1fr;gap:3rem}
+.instructor-badge-box{right:0}
+.pdf-inner{grid-template-columns:1fr;gap:3rem}
+.pdf-mockup{transform:none}
+.contact-inner{grid-template-columns:1fr}
+.audience-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
-  .topbar-nav{display:none}
-  .hamburger{display:flex}
-  .topbar-name{display:none}
-  .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .gallery-grid{grid-template-columns:1fr 1fr}
-  .audience-grid{grid-template-columns:1fr 1fr}
-  section{padding:4rem 1.25rem}
+.topbar-nav{display:none}
+.hamburger{display:flex}
+.topbar-name{display:none}
+.stats-inner{grid-template-columns:repeat(2,1fr)}
+.gallery-grid{grid-template-columns:1fr 1fr}
+.audience-grid{grid-template-columns:1fr 1fr}
+section{padding:4rem 1.25rem}
 }
 @media(max-width:480px){
-  .audience-grid{grid-template-columns:1fr}
-  .hero-actions{flex-direction:column}
-  .btn-primary,.btn-secondary{text-align:center;justify-content:center}
-  .gallery-grid{grid-template-columns:1fr}
-  .footer-inner{flex-direction:column;align-items:flex-start}
-  .topbar-logos img{height:42px;width:42px}
+.audience-grid{grid-template-columns:1fr}
+.hero-actions{flex-direction:column}
+.btn-primary,.btn-secondary{text-align:center;justify-content:center}
+.gallery-grid{grid-template-columns:1fr}
+.footer-inner{flex-direction:column;align-items:flex-start}
+.topbar-logos img{height:42px;width:42px}
 }
 </style>
 
 <!-- Google Analytics -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXXXXX');
 </script>
+
 </head>
 <body>
 
 <!-- CHAT WIDGET -->
+
 <div class="chat-widget">
   <div class="chat-bubble" id="chatBubble">
     <div class="chat-bubble-header">
@@ -804,45 +805,47 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
       </div>
     </div>
 
-    <!-- ADVISORY CARD -->
-    <div style="margin-top:1.5px;background:var(--border)">
-      <div style="background:var(--surface2);display:grid;grid-template-columns:1fr 1fr;gap:0" class="advisory-wrap">
-        <div style="padding:2.5rem 2rem;border-right:1.5px solid var(--border)">
-          <div class="course-level" style="color:var(--silver-dim)">Servicio personalizado</div>
-          <div class="course-name" style="font-size:2.2rem">Asesor&iacute;as en Seguridad</div>
-          <p class="course-desc" style="margin-bottom:1.5rem">Consultas personalizadas en seguridad personal, protecci&oacute;n VIP, evaluaci&oacute;n de riesgos, protocolos operativos y asesoramiento estrat&eacute;gico para empresas, figuras p&uacute;blicas o particulares. Cada consulta es &uacute;nica y el costo se define seg&uacute;n el alcance y las necesidades espec&iacute;ficas.</div>
-          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem">
-            <span class="cert-tag">Seguridad Personal</span>
-            <span class="cert-tag">Protecci&oacute;n VIP</span>
-            <span class="cert-tag">Evaluaci&oacute;n de Riesgos</span>
-            <span class="cert-tag">Protocolos Operativos</span>
-            <span class="cert-tag">Asesoramiento Empresarial</span>
-            <span class="cert-tag">Figuras P&uacute;blicas</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-            <div>
-              <div style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim)">Inversi&oacute;n</div>
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1">Cotizaci&oacute;n personalizada</div>
-            </div>
-          </div>
-          <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20una%20asesor%C3%ADa%20en%20seguridad%20personalizada" target="_blank" class="course-cta" style="margin-top:1.5rem">Solicitar asesor&iacute;a</a>
-        </div>
-        <div style="padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:1.5rem">
-          <div style="border-left:3px solid var(--gold);padding:.9rem 1.1rem;background:var(--surface)">
-            <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.3rem">&#128100; Individual / Familiar</div>
-            <div style="font-size:.83rem;color:var(--silver-dim);font-weight:300;line-height:1.5">Evaluaci&oacute;n de vulnerabilidades y dise&ntilde;o de protocolos de seguridad para personas y familias de alto perfil.</div>
-          </div>
-          <div style="border-left:3px solid var(--gold);padding:.9rem 1.1rem;background:var(--surface)">
-            <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.3rem">&#127970; Empresarial</div>
-            <div style="font-size:.83rem;color:var(--silver-dim);font-weight:300;line-height:1.5">Auditor&iacute;a de seguridad, capacitaci&oacute;n de personal y dise&ntilde;o de procedimientos operativos para empresas.</div>
-          </div>
-          <div style="border-left:3px solid var(--gold);padding:.9rem 1.1rem;background:var(--surface)">
-            <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.3rem">&#127775; Figuras P&uacute;blicas</div>
-            <div style="font-size:.83rem;color:var(--silver-dim);font-weight:300;line-height:1.5">Dise&ntilde;o de esquemas de protecci&oacute;n cercana, evaluaci&oacute;n de escoltas y asesoramiento en seguridad integral.</div>
-          </div>
+```
+<!-- ADVISORY CARD -->
+<div style="margin-top:1.5px;background:var(--border)">
+  <div style="background:var(--surface2);display:grid;grid-template-columns:1fr 1fr;gap:0" class="advisory-wrap">
+    <div style="padding:2.5rem 2rem;border-right:1.5px solid var(--border)">
+      <div class="course-level" style="color:var(--silver-dim)">Servicio personalizado</div>
+      <div class="course-name" style="font-size:2.2rem">Asesor&iacute;as en Seguridad</div>
+      <p class="course-desc" style="margin-bottom:1.5rem">Consultas personalizadas en seguridad personal, protecci&oacute;n VIP, evaluaci&oacute;n de riesgos, protocolos operativos y asesoramiento estrat&eacute;gico para empresas, figuras p&uacute;blicas o particulares. Cada consulta es &uacute;nica y el costo se define seg&uacute;n el alcance y las necesidades espec&iacute;ficas.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem">
+        <span class="cert-tag">Seguridad Personal</span>
+        <span class="cert-tag">Protecci&oacute;n VIP</span>
+        <span class="cert-tag">Evaluaci&oacute;n de Riesgos</span>
+        <span class="cert-tag">Protocolos Operativos</span>
+        <span class="cert-tag">Asesoramiento Empresarial</span>
+        <span class="cert-tag">Figuras P&uacute;blicas</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim)">Inversi&oacute;n</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1">Cotizaci&oacute;n personalizada</div>
         </div>
       </div>
+      <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20una%20asesor%C3%ADa%20en%20seguridad%20personalizada" target="_blank" class="course-cta" style="margin-top:1.5rem">Solicitar asesor&iacute;a</a>
     </div>
+    <div style="padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:1.5rem">
+      <div style="border-left:3px solid var(--gold);padding:.9rem 1.1rem;background:var(--surface)">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.3rem">&#128100; Individual / Familiar</div>
+        <div style="font-size:.83rem;color:var(--silver-dim);font-weight:300;line-height:1.5">Evaluaci&oacute;n de vulnerabilidades y dise&ntilde;o de protocolos de seguridad para personas y familias de alto perfil.</div>
+      </div>
+      <div style="border-left:3px solid var(--gold);padding:.9rem 1.1rem;background:var(--surface)">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.3rem">&#127970; Empresarial</div>
+        <div style="font-size:.83rem;color:var(--silver-dim);font-weight:300;line-height:1.5">Auditor&iacute;a de seguridad, capacitaci&oacute;n de personal y dise&ntilde;o de procedimientos operativos para empresas.</div>
+      </div>
+      <div style="border-left:3px solid var(--gold);padding:.9rem 1.1rem;background:var(--surface)">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.3rem">&#127775; Figuras P&uacute;blicas</div>
+        <div style="font-size:.83rem;color:var(--silver-dim);font-weight:300;line-height:1.5">Dise&ntilde;o de esquemas de protecci&oacute;n cercana, evaluaci&oacute;n de escoltas y asesoramiento en seguridad integral.</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
   </div>
 </section>
@@ -985,9 +988,8 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
   </div>
 </section>
 
-
-
 <!-- EVENTS -->
+
 <section id="eventos" style="padding:6rem 2rem">
   <div class="section-inner">
     <div class="section-label">Agenda t&aacute;ctica</div>
@@ -1042,6 +1044,7 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
 </section>
 
 <!-- COUNTER -->
+
 <div class="counter-section">
   <div class="counter-grid">
     <div class="counter-item reveal">
@@ -1107,6 +1110,7 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
 </section>
 
 <!-- INSCRIPTION FORM -->
+
 <section class="form-section" id="inscripcion" style="padding:6rem 2rem">
   <div class="section-inner">
     <div class="section-label">Reserva tu cupo</div>
@@ -1166,6 +1170,7 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
 </section>
 
 <!-- FAQ -->
+
 <section style="background:var(--surface);padding:6rem 2rem" id="faq">
   <div class="section-inner">
     <div class="section-label">Preguntas frecuentes</div>
@@ -1231,8 +1236,8 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
   </div>
 </section>
 
-
 <!-- CARDUMEN SPORT PARTNERSHIP -->
+
 <section class="partnership-section" id="convenios" style="padding:6rem 2rem">
   <div class="section-inner">
     <div class="section-label">Convenio exclusivo</div>
@@ -1308,11 +1313,15 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
         <a href="https://moriartiarmaments.com" target="_blank" class="alliance-link">moriartiarmaments.com &#8594;</a>
       </div>
 
-    </div>
+```
+</div>
+```
+
   </div>
 </section>
 
 <!-- MEDIA / PRESS -->
+
 <section class="media-section" id="prensa" style="padding:6rem 2rem">
   <div class="section-inner">
     <div class="section-label">Presencia en medios</div>
@@ -1353,6 +1362,7 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
 </section>
 
 <!-- ONLINE COURSES -->
+
 <section class="online-section" id="online" style="padding:6rem 2rem">
   <div class="section-inner">
     <div class="online-header">
@@ -1372,187 +1382,190 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
       </div>
     </div>
 
-    <div class="online-grid">
+```
+<div class="online-grid">
 
-      <!-- COURSE 1: AVAILABLE -->
-      <div class="online-card available reveal">
-        <div class="online-card-top">
-          <div class="online-card-status">&#9679; Disponible ahora</div>
-          <div class="online-card-title">Conciencia Situacional &amp; Seguridad Personal</div>
-          <p class="online-card-desc">Aprende a anticipar, identificar y neutralizar amenazas en entornos cotidianos. Mentalidad t&aacute;ctica, posicionamiento inteligente y protocolos de reacci&oacute;n efectivos.</p>
-          <div class="online-card-modules">
-            <span class="online-card-module">Mentalidad t&aacute;ctica</span>
-            <span class="online-card-module">Conciencia situacional</span>
-            <span class="online-card-module">Posicionamiento</span>
-            <span class="online-card-module">Errores comunes</span>
-            <span class="online-card-module">Principios de reacci&oacute;n</span>
-            <span class="online-card-module">Aplicaci&oacute;n real</span>
-          </div>
-        </div>
-        <div class="online-card-footer">
-          <div class="online-card-meta">
-            <div class="online-card-meta-item"><strong>6</strong>M&oacute;dulos</div>
-            <div class="online-card-meta-item"><strong>30+</strong>T&eacute;cnicas</div>
-            <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
-            <div class="online-card-meta-item"><strong>Online</strong>Acceso 24/7</div>
-          </div>
-          <div class="online-card-price"><span>S/</span> 97 <small>/ pago &uacute;nico</small></div>
-          <a href="#" onclick="openAccessPage(); return false;" class="online-cta">Acceder al curso &#8594;</a>
-        </div>
-      </div>
-
-      <!-- COURSE 2: COMING -->
-      <div class="online-card coming reveal">
-        <div class="online-card-top">
-          <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
-          <div class="online-card-title">Leg&iacute;tima Defensa Legal en Per&uacute;</div>
-          <p class="online-card-desc">Marco legal completo, cu&aacute;ndo es v&aacute;lida la defensa propia, qu&eacute; dice el c&oacute;digo penal y casos reales analizados con criterio t&aacute;ctico y jur&iacute;dico.</p>
-          <div class="online-card-modules">
-            <span class="online-card-module">C&oacute;digo penal</span>
-            <span class="online-card-module">Casos reales</span>
-            <span class="online-card-module">Proporcionalidad</span>
-            <span class="online-card-module">Protocolo legal</span>
-          </div>
-        </div>
-        <div class="online-card-footer">
-          <div class="online-card-meta">
-            <div class="online-card-meta-item"><strong>5</strong>M&oacute;dulos</div>
-            <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
-          </div>
-          <div class="online-card-price"><span>S/</span> 127</div>
-          <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Leg%C3%ADtima%20Defensa%20Legal" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
-        </div>
-      </div>
-
-      <!-- COURSE 3: COMING -->
-      <div class="online-card coming reveal">
-        <div class="online-card-top">
-          <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
-          <div class="online-card-title">Protecci&oacute;n Personal para Civiles</div>
-          <p class="online-card-desc">C&oacute;mo moverte en entornos de riesgo, rutinas de seguridad, qu&eacute; hacer ante un robo o secuestro express. Aplicable en toda Latinoam&eacute;rica.</p>
-          <div class="online-card-modules">
-            <span class="online-card-module">Rutinas seguras</span>
-            <span class="online-card-module">Entornos de riesgo</span>
-            <span class="online-card-module">Protocolo ante robo</span>
-            <span class="online-card-module">Familia y hogar</span>
-          </div>
-        </div>
-        <div class="online-card-footer">
-          <div class="online-card-meta">
-            <div class="online-card-meta-item"><strong>5</strong>M&oacute;dulos</div>
-            <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
-          </div>
-          <div class="online-card-price"><span>S/</span> 97</div>
-          <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Protecci%C3%B3n%20Personal%20para%20Civiles" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
-        </div>
-      </div>
-
-      <!-- COURSE 4: COMING -->
-      <div class="online-card coming reveal">
-        <div class="online-card-top">
-          <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
-          <div class="online-card-title">Seguridad VIP y Protocolo de Escolta</div>
-          <p class="online-card-desc">Formaci&oacute;n te&oacute;rica en esquemas de protecci&oacute;n, tipos de amenaza y protocolos internacionales para escoltas y personal de seguridad.</p>
-          <div class="online-card-modules">
-            <span class="online-card-module">Esquemas VIP</span>
-            <span class="online-card-module">Tipos de amenaza</span>
-            <span class="online-card-module">Protocolos INT</span>
-            <span class="online-card-module">Veh&iacute;culos</span>
-          </div>
-        </div>
-        <div class="online-card-footer">
-          <div class="online-card-meta">
-            <div class="online-card-meta-item"><strong>6</strong>M&oacute;dulos</div>
-            <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
-          </div>
-          <div class="online-card-price"><span>S/</span> 247</div>
-          <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Seguridad%20VIP%20y%20Escolta" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
-        </div>
-      </div>
-
-      <!-- COURSE 5: COMING -->
-      <div class="online-card coming reveal">
-        <div class="online-card-top">
-          <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
-          <div class="online-card-title">Seguridad para Empresas y Negocios</div>
-          <p class="online-card-desc">Protocolos de seguridad, evaluaci&oacute;n de riesgos corporativos y manejo de personal de seguridad. Dirigido a due&ntilde;os de negocios y gerentes.</p>
-          <div class="online-card-modules">
-            <span class="online-card-module">Auditor&iacute;a de riesgos</span>
-            <span class="online-card-module">Protocolos</span>
-            <span class="online-card-module">Personal seguridad</span>
-            <span class="online-card-module">Crisis</span>
-          </div>
-        </div>
-        <div class="online-card-footer">
-          <div class="online-card-meta">
-            <div class="online-card-meta-item"><strong>6</strong>M&oacute;dulos</div>
-            <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
-          </div>
-          <div class="online-card-price"><span>S/</span> 297</div>
-          <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Seguridad%20para%20Empresas" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
-        </div>
-      </div>
-
-      <!-- COURSE 6: COMING -->
-      <div class="online-card coming reveal">
-        <div class="online-card-top">
-          <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
-          <div class="online-card-title">Criminolog&iacute;a Aplicada a la Seguridad</div>
-          <p class="online-card-desc">Crimen organizado, perfiles criminales, criminalist&iacute;ca y su aplicaci&oacute;n directa en operaciones de seguridad. &Uacute;nico en Latinoam&eacute;rica.</p>
-          <div class="online-card-modules">
-            <span class="online-card-module">Crimen organizado</span>
-            <span class="online-card-module">Perfiles</span>
-            <span class="online-card-module">Crim&iacute;nalistica</span>
-            <span class="online-card-module">Aplicaci&oacute;n operativa</span>
-          </div>
-        </div>
-        <div class="online-card-footer">
-          <div class="online-card-meta">
-            <div class="online-card-meta-item"><strong>7</strong>M&oacute;dulos</div>
-            <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
-          </div>
-          <div class="online-card-price"><span>S/</span> 197</div>
-          <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Criminolog%C3%ADa%20Aplicada" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- WHAT'S INCLUDED -->
-    <div class="online-includes reveal">
-      <div class="online-includes-title">Todo curso online incluye</div>
-      <div class="online-includes-grid">
-        <div class="online-include-item">
-          <div class="online-include-icon">&#127891;</div>
-          <div class="online-include-text"><strong>Certificado digital</strong><span>Emitido por KR Tactical &mdash; Akita Security International</span></div>
-        </div>
-        <div class="online-include-item">
-          <div class="online-include-icon">&#128274;</div>
-          <div class="online-include-text"><strong>Acceso de por vida</strong><span>Entra cuando quieras, cuantas veces quieras</span></div>
-        </div>
-        <div class="online-include-item">
-          <div class="online-include-icon">&#128196;</div>
-          <div class="online-include-text"><strong>Material descargable</strong><span>Gu&iacute;as, checklists y material de apoyo en PDF</span></div>
-        </div>
-        <div class="online-include-item">
-          <div class="online-include-icon">&#128241;</div>
-          <div class="online-include-text"><strong>Acceso desde cualquier dispositivo</strong><span>Celular, tablet o computadora</span></div>
-        </div>
-        <div class="online-include-item">
-          <div class="online-include-icon">&#127760;</div>
-          <div class="online-include-text"><strong>Disponible en toda Latinoam&eacute;rica</strong><span>Sin restricciones geogr&aacute;ficas</span></div>
-        </div>
-        <div class="online-include-item">
-          <div class="online-include-icon">&#128172;</div>
-          <div class="online-include-text"><strong>Soporte directo</strong><span>Consultas respondidas por el instructor v&iacute;a WhatsApp</span></div>
-        </div>
+  <!-- COURSE 1: AVAILABLE -->
+  <div class="online-card available reveal">
+    <div class="online-card-top">
+      <div class="online-card-status">&#9679; Disponible ahora</div>
+      <div class="online-card-title">Conciencia Situacional &amp; Seguridad Personal</div>
+      <p class="online-card-desc">Aprende a anticipar, identificar y neutralizar amenazas en entornos cotidianos. Mentalidad t&aacute;ctica, posicionamiento inteligente y protocolos de reacci&oacute;n efectivos.</p>
+      <div class="online-card-modules">
+        <span class="online-card-module">Mentalidad t&aacute;ctica</span>
+        <span class="online-card-module">Conciencia situacional</span>
+        <span class="online-card-module">Posicionamiento</span>
+        <span class="online-card-module">Errores comunes</span>
+        <span class="online-card-module">Principios de reacci&oacute;n</span>
+        <span class="online-card-module">Aplicaci&oacute;n real</span>
       </div>
     </div>
+    <div class="online-card-footer">
+      <div class="online-card-meta">
+        <div class="online-card-meta-item"><strong>6</strong>M&oacute;dulos</div>
+        <div class="online-card-meta-item"><strong>30+</strong>T&eacute;cnicas</div>
+        <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
+        <div class="online-card-meta-item"><strong>Online</strong>Acceso 24/7</div>
+      </div>
+      <div class="online-card-price"><span>S/</span> 97 <small>/ pago &uacute;nico</small></div>
+      <a href="#" onclick="openAccessPage(); return false;" class="online-cta">Acceder al curso &#8594;</a>
+    </div>
+  </div>
+
+  <!-- COURSE 2: COMING -->
+  <div class="online-card coming reveal">
+    <div class="online-card-top">
+      <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
+      <div class="online-card-title">Leg&iacute;tima Defensa Legal en Per&uacute;</div>
+      <p class="online-card-desc">Marco legal completo, cu&aacute;ndo es v&aacute;lida la defensa propia, qu&eacute; dice el c&oacute;digo penal y casos reales analizados con criterio t&aacute;ctico y jur&iacute;dico.</p>
+      <div class="online-card-modules">
+        <span class="online-card-module">C&oacute;digo penal</span>
+        <span class="online-card-module">Casos reales</span>
+        <span class="online-card-module">Proporcionalidad</span>
+        <span class="online-card-module">Protocolo legal</span>
+      </div>
+    </div>
+    <div class="online-card-footer">
+      <div class="online-card-meta">
+        <div class="online-card-meta-item"><strong>5</strong>M&oacute;dulos</div>
+        <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
+      </div>
+      <div class="online-card-price"><span>S/</span> 127</div>
+      <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Leg%C3%ADtima%20Defensa%20Legal" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
+    </div>
+  </div>
+
+  <!-- COURSE 3: COMING -->
+  <div class="online-card coming reveal">
+    <div class="online-card-top">
+      <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
+      <div class="online-card-title">Protecci&oacute;n Personal para Civiles</div>
+      <p class="online-card-desc">C&oacute;mo moverte en entornos de riesgo, rutinas de seguridad, qu&eacute; hacer ante un robo o secuestro express. Aplicable en toda Latinoam&eacute;rica.</p>
+      <div class="online-card-modules">
+        <span class="online-card-module">Rutinas seguras</span>
+        <span class="online-card-module">Entornos de riesgo</span>
+        <span class="online-card-module">Protocolo ante robo</span>
+        <span class="online-card-module">Familia y hogar</span>
+      </div>
+    </div>
+    <div class="online-card-footer">
+      <div class="online-card-meta">
+        <div class="online-card-meta-item"><strong>5</strong>M&oacute;dulos</div>
+        <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
+      </div>
+      <div class="online-card-price"><span>S/</span> 97</div>
+      <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Protecci%C3%B3n%20Personal%20para%20Civiles" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
+    </div>
+  </div>
+
+  <!-- COURSE 4: COMING -->
+  <div class="online-card coming reveal">
+    <div class="online-card-top">
+      <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
+      <div class="online-card-title">Seguridad VIP y Protocolo de Escolta</div>
+      <p class="online-card-desc">Formaci&oacute;n te&oacute;rica en esquemas de protecci&oacute;n, tipos de amenaza y protocolos internacionales para escoltas y personal de seguridad.</p>
+      <div class="online-card-modules">
+        <span class="online-card-module">Esquemas VIP</span>
+        <span class="online-card-module">Tipos de amenaza</span>
+        <span class="online-card-module">Protocolos INT</span>
+        <span class="online-card-module">Veh&iacute;culos</span>
+      </div>
+    </div>
+    <div class="online-card-footer">
+      <div class="online-card-meta">
+        <div class="online-card-meta-item"><strong>6</strong>M&oacute;dulos</div>
+        <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
+      </div>
+      <div class="online-card-price"><span>S/</span> 247</div>
+      <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Seguridad%20VIP%20y%20Escolta" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
+    </div>
+  </div>
+
+  <!-- COURSE 5: COMING -->
+  <div class="online-card coming reveal">
+    <div class="online-card-top">
+      <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
+      <div class="online-card-title">Seguridad para Empresas y Negocios</div>
+      <p class="online-card-desc">Protocolos de seguridad, evaluaci&oacute;n de riesgos corporativos y manejo de personal de seguridad. Dirigido a due&ntilde;os de negocios y gerentes.</p>
+      <div class="online-card-modules">
+        <span class="online-card-module">Auditor&iacute;a de riesgos</span>
+        <span class="online-card-module">Protocolos</span>
+        <span class="online-card-module">Personal seguridad</span>
+        <span class="online-card-module">Crisis</span>
+      </div>
+    </div>
+    <div class="online-card-footer">
+      <div class="online-card-meta">
+        <div class="online-card-meta-item"><strong>6</strong>M&oacute;dulos</div>
+        <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
+      </div>
+      <div class="online-card-price"><span>S/</span> 297</div>
+      <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Seguridad%20para%20Empresas" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
+    </div>
+  </div>
+
+  <!-- COURSE 6: COMING -->
+  <div class="online-card coming reveal">
+    <div class="online-card-top">
+      <div class="online-card-status">&#9675; Pr&oacute;ximamente</div>
+      <div class="online-card-title">Criminolog&iacute;a Aplicada a la Seguridad</div>
+      <p class="online-card-desc">Crimen organizado, perfiles criminales, criminalist&iacute;ca y su aplicaci&oacute;n directa en operaciones de seguridad. &Uacute;nico en Latinoam&eacute;rica.</p>
+      <div class="online-card-modules">
+        <span class="online-card-module">Crimen organizado</span>
+        <span class="online-card-module">Perfiles</span>
+        <span class="online-card-module">Crim&iacute;nalistica</span>
+        <span class="online-card-module">Aplicaci&oacute;n operativa</span>
+      </div>
+    </div>
+    <div class="online-card-footer">
+      <div class="online-card-meta">
+        <div class="online-card-meta-item"><strong>7</strong>M&oacute;dulos</div>
+        <div class="online-card-meta-item"><strong>Certificado</strong>Incluido</div>
+      </div>
+      <div class="online-card-price"><span>S/</span> 197</div>
+      <a href="https://wa.me/51903409632?text=Hola%20Kevin%2C%20me%20interesa%20el%20curso%20online%20de%20Criminolog%C3%ADa%20Aplicada" target="_blank" class="online-cta">Notificarme cuando est&eacute; listo</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<div class="online-includes reveal">
+  <div class="online-includes-title">Todo curso online incluye</div>
+  <div class="online-includes-grid">
+    <div class="online-include-item">
+      <div class="online-include-icon">&#127891;</div>
+      <div class="online-include-text"><strong>Certificado digital</strong><span>Emitido por KR Tactical &mdash; Akita Security International</span></div>
+    </div>
+    <div class="online-include-item">
+      <div class="online-include-icon">&#128274;</div>
+      <div class="online-include-text"><strong>Acceso de por vida</strong><span>Entra cuando quieras, cuantas veces quieras</span></div>
+    </div>
+    <div class="online-include-item">
+      <div class="online-include-icon">&#128196;</div>
+      <div class="online-include-text"><strong>Material descargable</strong><span>Gu&iacute;as, checklists y material de apoyo en PDF</span></div>
+    </div>
+    <div class="online-include-item">
+      <div class="online-include-icon">&#128241;</div>
+      <div class="online-include-text"><strong>Acceso desde cualquier dispositivo</strong><span>Celular, tablet o computadora</span></div>
+    </div>
+    <div class="online-include-item">
+      <div class="online-include-icon">&#127760;</div>
+      <div class="online-include-text"><strong>Disponible en toda Latinoam&eacute;rica</strong><span>Sin restricciones geogr&aacute;ficas</span></div>
+    </div>
+    <div class="online-include-item">
+      <div class="online-include-icon">&#128172;</div>
+      <div class="online-include-text"><strong>Soporte directo</strong><span>Consultas respondidas por el instructor v&iacute;a WhatsApp</span></div>
+    </div>
+  </div>
+</div>
+```
 
   </div>
 </section>
 
 <!-- ACCESS PAGE (password protected) -->
+
 <div class="access-page" id="accessPage">
   <div class="access-box">
     <div class="access-box-logo">
@@ -1576,6 +1589,7 @@ footer{padding:3rem 2rem;border-top:1px solid var(--border)}
 </div>
 
 <!-- COURSE VIEWER -->
+
 <div class="course-viewer" id="courseViewer">
   <div class="course-topbar">
     <div class="course-topbar-title">Conciencia Situacional &amp; Seguridad Personal</div>
@@ -1812,6 +1826,7 @@ document.querySelectorAll('.counter-num[data-target]').forEach(function(el){
 </script>
 
 <!-- EXIT INTENT POPUP -->
+
 <div class="popup-overlay" id="exitPopup">
   <div class="popup-box">
     <button class="popup-close" onclick="closePopup()">&#10005;</button>
